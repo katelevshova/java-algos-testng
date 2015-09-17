@@ -2,7 +2,7 @@ package com.hally.task78;
 
 /**
  * Created by Kateryna Levshova
- * @date 09.16.2015
+ * @date 16.09.2015
  */
 public class LookupUtil
 {
