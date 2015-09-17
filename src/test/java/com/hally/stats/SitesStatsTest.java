@@ -106,4 +106,23 @@ public class SitesStatsTest
 
 		Assert.assertFalse(topAllPages.size() != 2);
 	}
+
+	@Test
+	public void testGetTopAllPages4()
+	{
+		_sitesStats.reportPageAccess("c.html");
+		_sitesStats.reportPageAccess("c.html");
+		_sitesStats.reportPageAccess("b.html");
+		_sitesStats.reportPageAccess("b.html");
+
+		List<String> topAllPages = _sitesStats.getTopAllPages();
+
+		Assert.assertEquals(topAllPages.size(), _pages.size());
+		Assert.assertEquals(topAllPages.size(), 2);
+
+		Assert.assertEquals(topAllPages.get(0), "b.html");
+		Assert.assertEquals(topAllPages.get(1), "c.html");
+
+		Assert.assertFalse(topAllPages.size() != 2);
+	}
 }
