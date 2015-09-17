@@ -45,7 +45,7 @@ public class LookupUtil
 
 	/**
 	 * Returns vendor name or bssId
-	 * @param searchStr - one line for vendor with bssId
+	 * @param searchStr - one line for vendor with bssId. Example "00:00:6E	Artisoft               # ARTISOFT, INC."
 	 * @param bssId - example "00:00:6F"
 	 * @return
 	 */
