@@ -1,5 +1,7 @@
 package com.hally.stats;
 
+import com.hally.task78.TraceUtil;
+
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -18,6 +20,7 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public class SitesStats implements ISitesStats
 {
+	public static final String CLASS_NAME = SitesStats.class.getName();
 	private ConcurrentHashMap<String, Integer> _pages = new ConcurrentHashMap<String, Integer>();
 
 	/**
@@ -62,6 +65,7 @@ public class SitesStats implements ISitesStats
 	 */
 	public void reportPageAccess(String pageName)
 	{
+		TraceUtil.logD(CLASS_NAME, "reportPageAccess", pageName);
 		if (_pages.containsKey(pageName))
 		{
 			int value = _pages.get(pageName);
