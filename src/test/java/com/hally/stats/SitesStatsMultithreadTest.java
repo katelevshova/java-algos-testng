@@ -28,7 +28,7 @@ public class SitesStatsMultithreadTest
 		_sitesStats = new SitesStats();
 	}
 
-		// The method will be run a total of 2 times using 2 threads
+	// The method will be run a total of 2 times using 2 threads
 	@Test(threadPoolSize = 2, invocationCount = 2, timeOut = 10000)
 	public void testReportPageAccess2Threads()
 	{
