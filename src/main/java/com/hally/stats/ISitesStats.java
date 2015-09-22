@@ -1,5 +1,6 @@
 package com.hally.stats;
 
+import java.util.AbstractMap;
 import java.util.List;
 
 /**
@@ -11,4 +12,6 @@ public interface ISitesStats
 	void reportPageAccess(String pageName);
 
 	List<String> getTopAllPages();
+
+	AbstractMap<String, Integer> getPages();
 }
