@@ -24,7 +24,7 @@ public class BigONotation
 		{
 			for(int j=0; j < array.length; j++)
 			{
-				if(array[i] == array[j])
+				if(array[i] == array[j] && i != j)
 				{
 					return true;
 				}
