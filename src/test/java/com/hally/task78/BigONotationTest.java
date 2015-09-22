@@ -19,5 +19,9 @@ public class BigONotationTest
 
 		boolean actualResult = bigONotation.hasDuplicates(array);
 		Assert.assertTrue(actualResult == true);
+
+		array = new int[]{2};
+		actualResult = bigONotation.hasDuplicates(array);
+		Assert.assertFalse(actualResult == true);
 	}
 }
