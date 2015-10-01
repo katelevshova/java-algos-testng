@@ -1,6 +1,7 @@
 package com.hally.taskSF;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
@@ -19,6 +20,8 @@ import java.util.TreeMap;
  */
 public class StringAnalizer
 {
+	//TreeMap uses key-value pairs and is backed up by Red-Black tree algorithm. Sorts the key in
+	// ascending order (alphabetical and upper/down case sensitive)
 	private TreeMap<String, Integer> _treeMapWords = new TreeMap<String, Integer>();
 
 	/**
@@ -35,9 +38,8 @@ public class StringAnalizer
 	 * @param text
 	 * @return
 	 */
-	public String printWordsInfo(String text)
+	public void printWordsInfo(String text)
 	{
-		String result = "";
 		String[] words = text.split(" ");
 
 //		StringTokenizer is also could be used for this purpose, its use is discouraged in new code
@@ -46,34 +48,45 @@ public class StringAnalizer
 //			System.out.println(st.nextToken());
 //		}
 
-		HashSet<String> hashSet = new HashSet<String>();
-		int counter = -1;
+		HashSet<String> wordsHashSet = new HashSet<String>(Arrays.asList(words));
 
-		for(String str: words)
+		System.out.println("----All distinct words detected, wordsHashSet------");
+		//Just print all distinct words
+		for(String distinctWord: wordsHashSet)
 		{
-			System.out.println("Distinct word detected =" + str);
-			hashSet.add(str);
+			System.out.println("distinctWord= "+distinctWord);
+		}
+		System.out.println("-------- number of distinct words = "+wordsHashSet.size());
+		System.out.println("\n\n");
+		System.out.println("Lets count occurrences\n");
 
-			//check if we have this word already then count its number
-			if(hashSet.contains(str))
+		//Lets count occurrences
+		for(String word: words)
+		{
+			System.out.println("word= " + word);
+
+			//check if we have this word already then increment its number
+			if(_treeMapWords.containsKey(word))
 			{
-				counter++;
-				_treeMapWords.put(str, counter);
+				int value = _treeMapWords.get(word);
+				value++;
+				_treeMapWords.put(word, value);
+			}
+			else
+			{
+				_treeMapWords.put(word, 1);
 			}
 		}
 
-		System.out.println(hashSet.size() + " distinct words detected "+ hashSet);
-		System.out.println(_treeMapWords);
+		System.out.println("-------------------------");
+		System.out.println("Result in alphabetical order upper/down case sensitive");
 
 		//print information without sorting
 		for (Map.Entry<String, Integer> e : _treeMapWords.entrySet())
 		{
 			System.out.println(e);
 		}
-
-		result = _treeMapWords.toString();
-		System.out.println("result= "+result);
-		return result;
+		//System.out.println("result= "+_treeMapWords.toString());
 	}
 
 	/**

@@ -17,11 +17,9 @@ public class StringAnalizerTest
 {
 	public String sourceStr = "State California. California is the 3rd lrget tate in the United " +
 			"States in area, after Alaska and Texas. In the middle of the state lies the " +
-			"California Central Valley. Let e repeat this California is the 3rd lrget tate in the United \" +\n" +
-			"\t\t\t\"States in area, after Alaska and Texas. In the middle of the states lies the " +
-			"California Central Valley.";
+			"California Central Valley. Let me repeat this California is the 3rd lrget tate in the United	States in area, after Alaska and Texas. In the middle of the states lies the California Central Valley.";
 
-	private String testStr1 = "Test one Test";
+	private String testStr1 = "Test one one one three";
 
 	private StringAnalizer _stringAnalizer;
 	private TreeMap<String, Integer> _treeMapWords;
@@ -52,7 +50,7 @@ public class StringAnalizerTest
 	@Test
 	public void testPrintWordsInfo2()
 	{
-		String actualResult =  _stringAnalizer.printWordsInfo(sourceStr);
+		 _stringAnalizer.printWordsInfo(testStr1);
 		//Assert.assertEquals(actualResult, expectedResult);
 	}
 
