@@ -15,11 +15,11 @@ import java.util.TreeMap;
  */
 public class StringAnalizerTest
 {
-	public String sourceStr = "State California. California is the 3rd lrget tate in the United " +
+	private String _testStr2 = "State California. California is the 3rd lrget tate in the United " +
 			"States in area, after Alaska and Texas. In the middle of the state lies the " +
 			"California Central Valley. Let me repeat this California is the 3rd lrget tate in the United	States in area, after Alaska and Texas. In the middle of the states lies the California Central Valley.";
 
-	private String testStr1 = "Test one one one three";
+	private String _testStr1 = "Test one one one three";
 
 	private StringAnalizer _stringAnalizer;
 	private TreeMap<String, Integer> _treeMapWords;
@@ -30,28 +30,28 @@ public class StringAnalizerTest
 	{
 		System.out.println("setUp");
 		_stringAnalizer = new StringAnalizer();
-		_treeMapWords =_stringAnalizer.getWords();
 	}
 
 	@BeforeMethod(alwaysRun = true)
 	public void clearData()
 	{
-		_treeMapWords = new TreeMap<String, Integer>();
+		_treeMapWords =_stringAnalizer.getWords();
 	}
 
-//	@Test
-//	public void testPrintWordsInfo1()
-//	{
-//		String actualResult =  _stringAnalizer.printWordsInfo(testStr1);
-//		String expectedResult = "{Test=2, one=1}";
-//		Assert.assertEquals(actualResult, expectedResult);
-//	}
-
 	@Test
-	public void testPrintWordsInfo2()
+	public void testPrintWordsInfo1()
 	{
-		 _stringAnalizer.printWordsInfo(testStr1);
-		//Assert.assertEquals(actualResult, expectedResult);
+		 _stringAnalizer.printWordsInfo(_testStr1);
+
+		Assert.assertEquals(_treeMapWords.size(), 3);
+
+		Assert.assertTrue(_treeMapWords.containsKey("Test"), "Must contain key 'Test'");
+		Assert.assertTrue(_treeMapWords.containsKey("one"), "Must contain key 'one'");
+		Assert.assertTrue(_treeMapWords.containsKey("three"), "Must contain key 'three'");
+
+		Assert.assertEquals(_treeMapWords.get("Test").intValue(), 1);
+		Assert.assertEquals(_treeMapWords.get("one").intValue(), 3);
+		Assert.assertEquals(_treeMapWords.get("three").intValue(), 1);
 	}
 
 //	@Test
