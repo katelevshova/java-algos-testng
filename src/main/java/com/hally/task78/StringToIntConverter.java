@@ -5,7 +5,7 @@ package com.hally.task78;
  *
  * @date 22.09.2015
  */
-public class StringConverter
+public class StringToIntConverter
 {
 	public static String PLUS_CHAR_EXCEPTION_ERROR = "Do not use + for positive values";
 	private static final int ZERO = 48; // ASCII code of zero '0'
@@ -16,7 +16,7 @@ public class StringConverter
 	 * @param src
 	 * @return
 	 */
-	public int stringToInt(String src) throws NumberFormatException
+	public int convert(String src) throws NumberFormatException
 	{
 		boolean isNegative = false;
 		int total = 0;

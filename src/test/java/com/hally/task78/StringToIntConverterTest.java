@@ -9,27 +9,27 @@ import org.testng.annotations.Test;
  *
  * @date 22.09.2015
  */
-public class StringConverterTest
+public class StringToIntConverterTest
 {
-	private StringConverter _stringConverter;
+	private StringToIntConverter _stringToIntConverter;
 
 	@BeforeMethod(alwaysRun = true)
 	public void setUp()
 	{
-		_stringConverter = new StringConverter();
+		_stringToIntConverter = new StringToIntConverter();
 	}
 
 	@Test
 	public void testConvertStrToInt()
 	{
-		int actualStr = _stringConverter.stringToInt("1234");
+		int actualStr = _stringToIntConverter.convert("1234");
 		Assert.assertEquals(actualStr, 1234);
 	}
 
 	@Test
 	public void testConvertStrToIntWithMinus()
 	{
-		int actualStr = _stringConverter.stringToInt("-12");
+		int actualStr = _stringToIntConverter.convert("-12");
 		Assert.assertEquals(actualStr, -12);
 	}
 
@@ -38,34 +38,34 @@ public class StringConverterTest
 	{
 		try
 		{
-			int actualStr = _stringConverter.stringToInt("+12");
-			Assert.fail("Should have thrown RuntimeException exception: " + StringConverter
+			int actualStr = _stringToIntConverter.convert("+12");
+			Assert.fail("Should have thrown RuntimeException exception: " + StringToIntConverter
 					.PLUS_CHAR_EXCEPTION_ERROR);
 		}
 		catch (NumberFormatException e)
 		{
-			Assert.assertEquals(e.getMessage(), StringConverter.PLUS_CHAR_EXCEPTION_ERROR);
+			Assert.assertEquals(e.getMessage(), StringToIntConverter.PLUS_CHAR_EXCEPTION_ERROR);
 		}
 	}
 
 	@Test
 	public void testConvertStrToIntWithDot()
 	{
-		int actualStr = _stringConverter.stringToInt("12.34");
+		int actualStr = _stringToIntConverter.convert("12.34");
 		Assert.assertEquals(actualStr, 12);
 	}
 
 	@Test
 	public void testConvertStrToIntWithWords1()
 	{
-		int actualStr = _stringConverter.stringToInt("1234 with words");
+		int actualStr = _stringToIntConverter.convert("1234 with words");
 		Assert.assertEquals(actualStr, 1234);
 	}
 
 	@Test
 	public void testConvertStrToIntWithWords2()
 	{
-		int actualStr = _stringConverter.stringToInt("words and 2");
+		int actualStr = _stringToIntConverter.convert("words and 2");
 		Assert.assertEquals(actualStr, 0);
 	}
 }
