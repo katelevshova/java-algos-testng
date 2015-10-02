@@ -8,6 +8,7 @@ package com.hally.taskSF;
 public class NumberReverser
 {
 	public static final String CLASS_NAME = NumberReverser.class.getName();
+	public static final String ERROR = "Reversed number is not in Integer bounds";
 
 	public int reverse(int srcNumber)
 	{
@@ -22,7 +23,7 @@ public class NumberReverser
 
 		if(reversedNumber > Integer.MAX_VALUE || reversedNumber < Integer.MIN_VALUE)
 		{
-			throw new IllegalArgumentException();
+			throw new IllegalArgumentException(ERROR);
 		}
 
 		return reversedNumber;

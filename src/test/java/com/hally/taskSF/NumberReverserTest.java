@@ -32,4 +32,19 @@ public class NumberReverserTest
 		int actualResult = _numberReverser.reverse(-345);
 		Assert.assertEquals(actualResult, -543);
 	}
+
+	@Test
+	public void testExceptionalCase()
+	{
+		try
+		{
+			_numberReverser.reverse(Integer.MAX_VALUE);
+			Assert.fail("Should have thrown exception that " +
+					NumberReverser.ERROR);
+		}
+		catch (IllegalArgumentException e)
+		{
+			Assert.assertEquals(e.getMessage(), NumberReverser.ERROR);
+		}
+	}
 }
