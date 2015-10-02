@@ -1,6 +1,7 @@
 package com.hally.taskSF;
 
 import org.testng.Assert;
+import org.testng.annotations.BeforeGroups;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
@@ -15,15 +16,9 @@ import java.util.TreeMap;
  */
 public class StringAnalizerTest
 {
-	private String _testStr2 = "State California. California is the 3rd lrget tate in the United " +
-			"States in area, after Alaska and Texas. In the middle of the state lies the " +
-			"California Central Valley. Let me repeat this California is the 3rd lrget tate in the United	States in area, after Alaska and Texas. In the middle of the states lies the California Central Valley.";
-
 	private String _testStr1 = "Test one one one three";
-
+	private String _testStr2 = "Test test test. test";
 	private StringAnalizer _stringAnalizer;
-	private TreeMap<String, Integer> _treeMapWords;
-
 
 	@BeforeSuite(alwaysRun = false)
 	public void setUp()
@@ -32,39 +27,58 @@ public class StringAnalizerTest
 		_stringAnalizer = new StringAnalizer();
 	}
 
-	@BeforeMethod(alwaysRun = true)
-	public void clearData()
-	{
-		_treeMapWords =_stringAnalizer.getWords();
-	}
-
-	@Test
+	@Test(groups = "group1")
 	public void testPrintWordsInfo1()
 	{
 		 _stringAnalizer.printWordsInfo(_testStr1);
 
-		Assert.assertEquals(_treeMapWords.size(), 3);
+		TreeMap<String, Integer> treeMapWords = _stringAnalizer.getWords();
+		Assert.assertEquals(treeMapWords.size(), 3);
 
-		Assert.assertTrue(_treeMapWords.containsKey("Test"), "Must contain key 'Test'");
-		Assert.assertTrue(_treeMapWords.containsKey("one"), "Must contain key 'one'");
-		Assert.assertTrue(_treeMapWords.containsKey("three"), "Must contain key 'three'");
+		Assert.assertTrue(treeMapWords.containsKey("Test"), "Must contain key 'Test'");
+		Assert.assertTrue(treeMapWords.containsKey("one"), "Must contain key 'one'");
+		Assert.assertTrue(treeMapWords.containsKey("three"), "Must contain key 'three'");
 
-		Assert.assertEquals(_treeMapWords.get("Test").intValue(), 1);
-		Assert.assertEquals(_treeMapWords.get("one").intValue(), 3);
-		Assert.assertEquals(_treeMapWords.get("three").intValue(), 1);
+		Assert.assertEquals(treeMapWords.get("Test").intValue(), 1);
+		Assert.assertEquals(treeMapWords.get("one").intValue(), 3);
+		Assert.assertEquals(treeMapWords.get("three").intValue(), 1);
 	}
 
-//	@Test
-//	public void testGetTopAllWords()
-//	{
-//		_stringAnalizer.printWordsInfo(sourceStr);
-//
-//		List<String> topAllWords = _stringAnalizer.getTopAllWords();
-//
-//		Assert.assertEquals(topAllWords.size(), _treeMapWords.size());
-//
-//		///Assert.assertEquals(topAllWords.size(), );
-//	}
+	@Test(groups = "group1", dependsOnMethods = {"testPrintWordsInfo1"})
+	public void testGetTopAllWords1()
+	{
+		List<String> topAllWords = _stringAnalizer.getTopAllWords();
+		Assert.assertEquals(topAllWords.size(),  _stringAnalizer.getWords().size());
 
+		Assert.assertEquals("one=3", topAllWords.get(0) );
+		Assert.assertEquals("Test=1", topAllWords.get(1) );
+		Assert.assertEquals("three=1", topAllWords.get(2) );
+	}
 
+	@Test(groups = "group2", dependsOnGroups = "group1")
+	public void testPrintWordsInfo2()
+	{
+		_stringAnalizer.printWordsInfo(_testStr2);
+		TreeMap<String, Integer> treeMapWords = _stringAnalizer.getWords();
+		Assert.assertEquals(treeMapWords.size(), 3);
+
+		Assert.assertTrue(treeMapWords.containsKey("Test"), "Must contain key 'Test'");
+		Assert.assertTrue(treeMapWords.containsKey("test"), "Must contain key 'test'");
+		Assert.assertTrue(treeMapWords.containsKey("test."), "Must contain key 'test.'");
+
+		Assert.assertEquals(treeMapWords.get("Test").intValue(), 1);
+		Assert.assertEquals(treeMapWords.get("test").intValue(), 2);
+		Assert.assertEquals(treeMapWords.get("test.").intValue(), 1);
+	}
+
+	@Test(groups = "group2", dependsOnMethods = {"testPrintWordsInfo2"})
+	public void testGetTopAllWords2()
+	{
+		List<String> topAllWords = _stringAnalizer.getTopAllWords();
+		Assert.assertEquals(topAllWords.size(), _stringAnalizer.getWords().size());
+
+		Assert.assertEquals("test=2", topAllWords.get(0) );
+		Assert.assertEquals("Test=1", topAllWords.get(1) );
+		Assert.assertEquals("test.=1", topAllWords.get(2) );
+	}
 }

@@ -22,7 +22,7 @@ public class StringAnalizer
 {
 	//TreeMap uses key-value pairs and is backed up by Red-Black tree algorithm. Sorts the key in
 	// ascending order (alphabetical and upper/down case sensitive)
-	private TreeMap<String, Integer> _treeMapWords = new TreeMap<String, Integer>();
+	private TreeMap<String, Integer> _treeMapWords;
 
 	/**
 	 * Used for <code>StringAnalizerTest</code> class
@@ -40,6 +40,7 @@ public class StringAnalizer
 	 */
 	public void printWordsInfo(String text)
 	{
+		_treeMapWords = new TreeMap<String, Integer>();
 		String[] words = text.split(" ");
 
 //		StringTokenizer is also could be used for this purpose, its use is discouraged in new code
@@ -57,8 +58,7 @@ public class StringAnalizer
 			System.out.println("distinctWord= "+distinctWord);
 		}
 		System.out.println("-------- number of distinct words = "+wordsHashSet.size());
-		System.out.println("\n\n");
-		System.out.println("Lets count occurrences\n");
+		System.out.println("\nLets count occurrences\n");
 
 		//Lets count occurrences
 		for(String word: words)
@@ -100,9 +100,11 @@ public class StringAnalizer
 
 		for (Map.Entry<String, Integer> e : stringIntegerMap.entrySet())
 		{
-			wordsList.add(e.getKey());
+			wordsList.add(e.toString()); // saves data in format "word=3"
 		}
 
+		System.out.println("-------------------------");
+		System.out.println("Sorting order based on values");
 		System.out.println("getTopAllWords= "+ wordsList.toString());
 
 		return wordsList;
