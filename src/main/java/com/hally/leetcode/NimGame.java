@@ -7,17 +7,17 @@ package com.hally.leetcode;
  */
 public class NimGame
 {
-
+	public static final String ERROR = "Amount (n) must be >= 1";
 	private static final int max = 3;
 
-	public boolean canWinNim(int amount)
+	public boolean canWinNim(int n)
 	{
-		boolean result = true;
+		if(n < 1)
+		{
+			return false;
+		}
 
-		int value = 0;
-
-
-		return result;
+		int remaining = n % (max + 1);
+		return (remaining <= max && remaining != 0);
 	}
-
 }
