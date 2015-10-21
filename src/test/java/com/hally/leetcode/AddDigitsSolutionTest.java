@@ -49,6 +49,32 @@ public class AddDigitsSolutionTest
 	}
 
 	@Test
+	public void testAddDigits_3()
+	{
+		try
+		{
+			Assert.assertEquals(_addDigitsSolution.addDigits(9), 9);
+		}
+		catch (Exception e)
+		{
+			System.out.println(e.getMessage());
+		}
+	}
+
+	@Test
+	public void testAddDigits_4()
+	{
+		try
+		{
+			Assert.assertEquals(_addDigitsSolution.addDigits(18), 9);
+		}
+		catch (Exception e)
+		{
+			System.out.println(e.getMessage());
+		}
+	}
+
+	@Test
 	public void testAddDigits_Negative()
 	{
 		try

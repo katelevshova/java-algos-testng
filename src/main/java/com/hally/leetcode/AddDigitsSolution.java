@@ -14,9 +14,22 @@ public class AddDigitsSolution
 	 */
 	public int addDigits(int num) throws Exception
 	{
-		if(num > 0)
+		if(num > 9)
 		{
-			return num % 9;
+			int result = num % 9;
+
+			if(result == 0)
+			{
+				return 9;
+			}
+			else
+			{
+				return result;
+			}
+		}
+		else if (num > 0)
+		{
+			return num;
 		}
 		else
 		{
