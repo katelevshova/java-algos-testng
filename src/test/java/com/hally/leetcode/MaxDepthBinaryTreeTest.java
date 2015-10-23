@@ -25,12 +25,14 @@ public class MaxDepthBinaryTreeTest
 	{
 		_root = new Node(10);
 		Assert.assertEquals(_maxDepthBinaryTree.maxDepth(_root), 1);
+		Assert.assertEquals(_maxDepthBinaryTree.maxDepthIterative(_root), 1);
 	}
 
 	@Test
 	public void maxDepth_Zero_Nodes()
 	{
 		Assert.assertEquals(_maxDepthBinaryTree.maxDepth(null), 0);
+		Assert.assertEquals(_maxDepthBinaryTree.maxDepthIterative(null), 0);
 	}
 
 	@Test
@@ -41,6 +43,7 @@ public class MaxDepthBinaryTreeTest
 //			20		20
 		_root = new Node(10, new Node(20), new Node(20));
 		Assert.assertEquals(_maxDepthBinaryTree.maxDepth(_root), 2);
+		Assert.assertEquals(_maxDepthBinaryTree.maxDepthIterative(_root), 2);
 	}
 
 	@Test
@@ -55,6 +58,7 @@ public class MaxDepthBinaryTreeTest
 		Node right = new Node(20);
 		_root = new Node(10, left, right);
 		Assert.assertEquals(_maxDepthBinaryTree.maxDepth(_root), 3);
+		Assert.assertEquals(_maxDepthBinaryTree.maxDepthIterative(_root), 3);
 	}
 
 	@Test
@@ -69,6 +73,7 @@ public class MaxDepthBinaryTreeTest
 		Node right = new Node(20);
 		_root = new Node(10, left, right);
 		Assert.assertEquals(_maxDepthBinaryTree.maxDepth(_root), 3);
+		Assert.assertEquals(_maxDepthBinaryTree.maxDepthIterative(_root), 3);
 	}
 
 	@Test
@@ -83,6 +88,7 @@ public class MaxDepthBinaryTreeTest
 		Node right = new Node(20, new Node(15), new Node(9));
 		_root = new Node(10, left, right);
 		Assert.assertEquals(_maxDepthBinaryTree.maxDepth(_root), 3);
+		Assert.assertEquals(_maxDepthBinaryTree.maxDepthIterative(_root), 3);
 	}
 
 
@@ -98,5 +104,23 @@ public class MaxDepthBinaryTreeTest
 		Node right = new Node(20, new Node(15), null);
 		_root = new Node(10, left, right);
 		Assert.assertEquals(_maxDepthBinaryTree.maxDepth(_root), 3);
+		Assert.assertEquals(_maxDepthBinaryTree.maxDepthIterative(_root), 3);
+	}
+
+	@Test
+	public void testIsSymmetric_4_Level()
+	{
+//				10
+//				\
+//					20
+//					\
+//						5
+//						\
+//							3
+
+		Node right = new Node(20, null, new Node(5, null, new Node(3)));
+		_root = new Node(10, null, right);
+		Assert.assertEquals(_maxDepthBinaryTree.maxDepth(_root), 4);
+		Assert.assertEquals(_maxDepthBinaryTree.maxDepthIterative(_root), 4);
 	}
 }

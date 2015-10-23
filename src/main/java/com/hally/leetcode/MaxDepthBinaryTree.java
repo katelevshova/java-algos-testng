@@ -38,4 +38,15 @@ public class MaxDepthBinaryTree
 
 		return 1 + Math.max(leftCounter, rightCounter);
 	}
+
+	//TODO: implement this method
+	public int maxDepthIterative(Node node)
+	{
+		if(node == null)
+		{
+			return 0;
+		}
+
+		return 0;
+	}
 }
