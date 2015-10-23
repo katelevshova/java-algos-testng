@@ -2,6 +2,8 @@ package com.hally.leetcode;
 
 import com.hally.taskAp.Node;
 
+import java.util.LinkedList;
+
 /**
  * Created by Oni on 21.10.2015.
  */
@@ -39,7 +41,6 @@ public class MaxDepthBinaryTree
 		return 1 + Math.max(leftCounter, rightCounter);
 	}
 
-	//TODO: implement this method
 	public int maxDepthIterative(Node node)
 	{
 		if(node == null)
@@ -47,6 +48,41 @@ public class MaxDepthBinaryTree
 			return 0;
 		}
 
-		return 0;
+		LinkedList<Node> linkedList = new LinkedList<>();
+		linkedList.push(node); // push root
+		int nodeCounter = 0;
+		int resultCounter = 0;
+
+		while (true)
+		{
+			// indicates nodes number at current layer
+			nodeCounter = linkedList.size();
+
+			if(nodeCounter == 0)
+			{
+				return resultCounter;
+			}
+
+			resultCounter++;
+
+			// dequeue all nodes from current level and enqueue all nodes for next level
+			while (nodeCounter > 0)
+			{
+				node = linkedList.getFirst();
+				linkedList.pop();
+
+				if(node.left != null)
+				{
+					linkedList.push(node.left);
+				}
+
+				if(node.right != null)
+				{
+					linkedList.push(node.right);
+				}
+
+				nodeCounter--;
+			}
+		}
 	}
 }
