@@ -15,7 +15,7 @@ public class MaxDepthBinaryTree
 	 * from the root node down to the farthest leaf node.
 	 */
 
-	public int maxDepth(Node node)
+	public int maxDepthRecursion(Node node)
 	{
 		if(node == null)
 		{
@@ -28,13 +28,13 @@ public class MaxDepthBinaryTree
 		//count left nodes
 		if(node.left != null)
 		{
-			leftCounter = maxDepth(node.left);
+			leftCounter = maxDepthRecursion(node.left);
 		}
 
 		//count right nodes
 		if(node.right != null)
 		{
-			rightCounter = maxDepth(node.right);
+			rightCounter = maxDepthRecursion(node.right);
 		}
 		//the largest counter add to 1st root node
 
