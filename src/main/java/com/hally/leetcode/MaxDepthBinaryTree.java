@@ -1,6 +1,6 @@
 package com.hally.leetcode;
 
-import com.hally.taskAp.Node;
+import com.hally.taskAp.TreeNode;
 
 import java.util.LinkedList;
 
@@ -12,12 +12,12 @@ public class MaxDepthBinaryTree
 	/**
 	 * Given a binary tree, find its maximum depth.
 	 * The maximum depth is the number of nodes along the longest path
-	 * from the root node down to the farthest leaf node.
+	 * from the root treeNode down to the farthest leaf treeNode.
 	 */
 
-	public int maxDepthRecursion(Node node)
+	public int maxDepthRecursion(TreeNode treeNode)
 	{
-		if(node == null)
+		if(treeNode == null)
 		{
 			return 0;
 		}
@@ -26,30 +26,30 @@ public class MaxDepthBinaryTree
 		int rightCounter = 0;
 
 		//count left nodes
-		if(node.left != null)
+		if(treeNode.left != null)
 		{
-			leftCounter = maxDepthRecursion(node.left);
+			leftCounter = maxDepthRecursion(treeNode.left);
 		}
 
 		//count right nodes
-		if(node.right != null)
+		if(treeNode.right != null)
 		{
-			rightCounter = maxDepthRecursion(node.right);
+			rightCounter = maxDepthRecursion(treeNode.right);
 		}
-		//the largest counter add to 1st root node
+		//the largest counter add to 1st root treeNode
 
 		return 1 + Math.max(leftCounter, rightCounter);
 	}
 
-	public int maxDepthIterative(Node node)
+	public int maxDepthIterative(TreeNode treeNode)
 	{
-		if(node == null)
+		if(treeNode == null)
 		{
 			return 0;
 		}
 
-		LinkedList<Node> linkedList = new LinkedList<>();
-		linkedList.push(node); // push root
+		LinkedList<TreeNode> linkedList = new LinkedList<>();
+		linkedList.push(treeNode); // push root
 		int nodeCounter = 0;
 		int resultCounter = 0;
 
@@ -68,17 +68,17 @@ public class MaxDepthBinaryTree
 			// dequeue all nodes from current level and enqueue all nodes for next level
 			while (nodeCounter > 0)
 			{
-				node = linkedList.getFirst();
+				treeNode = linkedList.getFirst();
 				linkedList.pop();
 
-				if(node.left != null)
+				if(treeNode.left != null)
 				{
-					linkedList.push(node.left);
+					linkedList.push(treeNode.left);
 				}
 
-				if(node.right != null)
+				if(treeNode.right != null)
 				{
-					linkedList.push(node.right);
+					linkedList.push(treeNode.right);
 				}
 
 				nodeCounter--;

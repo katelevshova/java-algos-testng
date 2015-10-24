@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 public class TreeSymmetryAnalizerTest
 {
 	private TreeSymmetryAnalizer _treeSymmetryAnalizer;
-	private Node _root;
+	private TreeNode _root;
 
 	@BeforeSuite(alwaysRun = true)
 	public void setUp()
@@ -23,7 +23,7 @@ public class TreeSymmetryAnalizerTest
 	@Test
 	public void testIsSymmetric_Single_Root_Node()
 	{
-		_root = new Node(10);
+		_root = new TreeNode(10);
 		Assert.assertTrue(_treeSymmetryAnalizer.isSymmetricRecursion(_root));
 		Assert.assertTrue(_treeSymmetryAnalizer.isSymmetricIterative(_root));
 	}
@@ -34,7 +34,7 @@ public class TreeSymmetryAnalizerTest
 //				10
 //				/\
 //			20		20
-		_root = new Node(10, new Node(20), new Node(20));
+		_root = new TreeNode(10, new TreeNode(20), new TreeNode(20));
 		Assert.assertTrue(_treeSymmetryAnalizer.isSymmetricRecursion(_root));
 		Assert.assertTrue(_treeSymmetryAnalizer.isSymmetricIterative(_root));
 	}
@@ -47,9 +47,9 @@ public class TreeSymmetryAnalizerTest
 //			20		20
 // 			/\		/\
 //		  30  40  40  30
-		Node left = new Node(20, new Node(30), new Node(40));
-		Node right = new Node(20, new Node(40), new Node(30));
-		_root = new Node(10, left, right);
+		TreeNode left = new TreeNode(20, new TreeNode(30), new TreeNode(40));
+		TreeNode right = new TreeNode(20, new TreeNode(40), new TreeNode(30));
+		_root = new TreeNode(10, left, right);
 		Assert.assertTrue(_treeSymmetryAnalizer.isSymmetricRecursion(_root));
 		Assert.assertTrue(_treeSymmetryAnalizer.isSymmetricIterative(_root));
 	}
@@ -62,8 +62,8 @@ public class TreeSymmetryAnalizerTest
 //			20
 // 			/\
 //		  30  40
-		Node left = new Node(20, new Node(30), new Node(40));
-		_root = new Node(10, left, null);
+		TreeNode left = new TreeNode(20, new TreeNode(30), new TreeNode(40));
+		_root = new TreeNode(10, left, null);
 		Assert.assertFalse(_treeSymmetryAnalizer.isSymmetricRecursion(_root));
 		Assert.assertFalse(_treeSymmetryAnalizer.isSymmetricIterative(_root));
 	}
@@ -76,8 +76,8 @@ public class TreeSymmetryAnalizerTest
 //				20
 // 				/\
 //		  	  30  40
-		Node right = new Node(20, new Node(30), new Node(40));
-		_root = new Node(10, null, right);
+		TreeNode right = new TreeNode(20, new TreeNode(30), new TreeNode(40));
+		_root = new TreeNode(10, null, right);
 		Assert.assertFalse(_treeSymmetryAnalizer.isSymmetricRecursion(_root));
 		Assert.assertFalse(_treeSymmetryAnalizer.isSymmetricIterative(_root));
 	}
@@ -90,9 +90,9 @@ public class TreeSymmetryAnalizerTest
 //			20		20
 // 			/\		/\
 //		  30  40  30  40
-		Node left = new Node(20, new Node(30), new Node(40));
-		Node right = new Node(20, new Node(30), new Node(40));
-		_root = new Node(10, left, right);
+		TreeNode left = new TreeNode(20, new TreeNode(30), new TreeNode(40));
+		TreeNode right = new TreeNode(20, new TreeNode(30), new TreeNode(40));
+		_root = new TreeNode(10, left, right);
 		Assert.assertFalse(_treeSymmetryAnalizer.isSymmetricRecursion(_root));
 		Assert.assertFalse(_treeSymmetryAnalizer.isSymmetricIterative(_root));
 	}
@@ -105,9 +105,9 @@ public class TreeSymmetryAnalizerTest
 //			20		20
 // 			/		/\
 //		  30      40  30
-		Node left = new Node(20, new Node(30), null);
-		Node right = new Node(20, new Node(30), new Node(40));
-		_root = new Node(10, left, right);
+		TreeNode left = new TreeNode(20, new TreeNode(30), null);
+		TreeNode right = new TreeNode(20, new TreeNode(30), new TreeNode(40));
+		_root = new TreeNode(10, left, right);
 		Assert.assertFalse(_treeSymmetryAnalizer.isSymmetricRecursion(_root));
 		Assert.assertFalse(_treeSymmetryAnalizer.isSymmetricIterative(_root));
 	}

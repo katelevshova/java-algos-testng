@@ -5,18 +5,18 @@ package com.hally.taskAp;
  *
  * @date 02.10.2015
  */
-public class Node
+public class TreeNode
 {
 	public int value;
-	public Node left = null;
-	public Node right = null;
+	public TreeNode left = null;
+	public TreeNode right = null;
 
-	public Node(int v)
+	public TreeNode(int v)
 	{
 		value = v;
 	}
 
-	public Node(int v, Node l, Node r)
+	public TreeNode(int v, TreeNode l, TreeNode r)
 	{
 		value = v;
 		left = l;

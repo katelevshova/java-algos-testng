@@ -1,6 +1,6 @@
 package com.hally.leetcode;
 
-import com.hally.taskAp.Node;
+import com.hally.taskAp.TreeNode;
 
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 public class MaxDepthBinaryTreeTest
 {
 	private MaxDepthBinaryTree _maxDepthBinaryTree;
-	private Node _root;
+	private TreeNode _root;
 
 	@BeforeTest(alwaysRun = true)
 	public void setUp()
@@ -23,7 +23,7 @@ public class MaxDepthBinaryTreeTest
 	@Test
 	public void maxDepth_Single_Root_Node()
 	{
-		_root = new Node(10);
+		_root = new TreeNode(10);
 		Assert.assertEquals(_maxDepthBinaryTree.maxDepthRecursion(_root), 1);
 		Assert.assertEquals(_maxDepthBinaryTree.maxDepthIterative(_root), 1);
 	}
@@ -41,7 +41,7 @@ public class MaxDepthBinaryTreeTest
 //				10
 //				/\
 //			20		20
-		_root = new Node(10, new Node(20), new Node(20));
+		_root = new TreeNode(10, new TreeNode(20), new TreeNode(20));
 		Assert.assertEquals(_maxDepthBinaryTree.maxDepthRecursion(_root), 2);
 		Assert.assertEquals(_maxDepthBinaryTree.maxDepthIterative(_root), 2);
 	}
@@ -54,9 +54,9 @@ public class MaxDepthBinaryTreeTest
 //			20		20
 //			/\
 //		45		7
-		Node left = new Node(20, new Node(45), new Node(7));
-		Node right = new Node(20);
-		_root = new Node(10, left, right);
+		TreeNode left = new TreeNode(20, new TreeNode(45), new TreeNode(7));
+		TreeNode right = new TreeNode(20);
+		_root = new TreeNode(10, left, right);
 		Assert.assertEquals(_maxDepthBinaryTree.maxDepthRecursion(_root), 3);
 		Assert.assertEquals(_maxDepthBinaryTree.maxDepthIterative(_root), 3);
 	}
@@ -69,9 +69,9 @@ public class MaxDepthBinaryTreeTest
 //			20		20
 //			/
 //		45
-		Node left = new Node(20, new Node(45), null);
-		Node right = new Node(20);
-		_root = new Node(10, left, right);
+		TreeNode left = new TreeNode(20, new TreeNode(45), null);
+		TreeNode right = new TreeNode(20);
+		_root = new TreeNode(10, left, right);
 		Assert.assertEquals(_maxDepthBinaryTree.maxDepthRecursion(_root), 3);
 		Assert.assertEquals(_maxDepthBinaryTree.maxDepthIterative(_root), 3);
 	}
@@ -84,9 +84,9 @@ public class MaxDepthBinaryTreeTest
 //			20		20
 //					/\
 //				15		9
-		Node left = new Node(20);
-		Node right = new Node(20, new Node(15), new Node(9));
-		_root = new Node(10, left, right);
+		TreeNode left = new TreeNode(20);
+		TreeNode right = new TreeNode(20, new TreeNode(15), new TreeNode(9));
+		_root = new TreeNode(10, left, right);
 		Assert.assertEquals(_maxDepthBinaryTree.maxDepthRecursion(_root), 3);
 		Assert.assertEquals(_maxDepthBinaryTree.maxDepthIterative(_root), 3);
 	}
@@ -100,9 +100,9 @@ public class MaxDepthBinaryTreeTest
 //			20		20
 //					/
 //				15
-		Node left = new Node(20);
-		Node right = new Node(20, new Node(15), null);
-		_root = new Node(10, left, right);
+		TreeNode left = new TreeNode(20);
+		TreeNode right = new TreeNode(20, new TreeNode(15), null);
+		_root = new TreeNode(10, left, right);
 		Assert.assertEquals(_maxDepthBinaryTree.maxDepthRecursion(_root), 3);
 		Assert.assertEquals(_maxDepthBinaryTree.maxDepthIterative(_root), 3);
 	}
@@ -118,8 +118,8 @@ public class MaxDepthBinaryTreeTest
 //						\
 //							3
 
-		Node right = new Node(20, null, new Node(5, null, new Node(3)));
-		_root = new Node(10, null, right);
+		TreeNode right = new TreeNode(20, null, new TreeNode(5, null, new TreeNode(3)));
+		_root = new TreeNode(10, null, right);
 		Assert.assertEquals(_maxDepthBinaryTree.maxDepthRecursion(_root), 4);
 		Assert.assertEquals(_maxDepthBinaryTree.maxDepthIterative(_root), 4);
 	}

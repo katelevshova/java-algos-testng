@@ -15,7 +15,7 @@ public class TreeSymmetryAnalizer
 	 * @param parent
 	 * @return true - if symmetric, false - if is not
 	 */
-	public Boolean isSymmetricRecursion(Node parent)
+	public Boolean isSymmetricRecursion(TreeNode parent)
 	{
 		if (parent == null)
 		{
@@ -27,64 +27,64 @@ public class TreeSymmetryAnalizer
 
 	/**
 	 * A helper method for <code>isSymmetric</code> method. Checks internal nodes.
-	 * @param leftNode
-	 * @param rightNode
+	 * @param leftTreeNode
+	 * @param rightTreeNode
 	 * @return
 	 */
-	private Boolean isSymmetricHelper(Node leftNode, Node rightNode)
+	private Boolean isSymmetricHelper(TreeNode leftTreeNode, TreeNode rightTreeNode)
 	{
 		Boolean result = false;
 
 		// If both null then true
-		if (leftNode == null && rightNode == null)
+		if (leftTreeNode == null && rightTreeNode == null)
 		{
 			result = true;
 		}
 
-		if (leftNode != null && rightNode != null)
+		if (leftTreeNode != null && rightTreeNode != null)
 		{
-			result = (leftNode.value == rightNode.value)
-					&& isSymmetricHelper(leftNode.left, rightNode.right)
-					&& isSymmetricHelper(leftNode.right, rightNode.left);
+			result = (leftTreeNode.value == rightTreeNode.value)
+					&& isSymmetricHelper(leftTreeNode.left, rightTreeNode.right)
+					&& isSymmetricHelper(leftTreeNode.right, rightTreeNode.left);
 		}
 
 		return  result;
 	}
 
-	public Boolean isSymmetricIterative(Node node)
+	public Boolean isSymmetricIterative(TreeNode treeNode)
 	{
 		Boolean result = true;
 
-		if(node == null)
+		if(treeNode == null)
 		{
 			return false;
 		}
 
-		Queue<Node> queue = new LinkedList<>();
-		queue.offer(node.left);
-		queue.offer(node.right);
+		Queue<TreeNode> queue = new LinkedList<>();
+		queue.offer(treeNode.left);
+		queue.offer(treeNode.right);
 
 		while (!queue.isEmpty())
 		{
-			Node leftNode = queue.poll();
-			Node rightNode = queue.poll();
+			TreeNode leftTreeNode = queue.poll();
+			TreeNode rightTreeNode = queue.poll();
 
-			if(leftNode == null && rightNode == null)
+			if(leftTreeNode == null && rightTreeNode == null)
 			{
 				result = true;
 			}
-			else if (leftNode == null || rightNode == null || leftNode.value != rightNode.value)
+			else if (leftTreeNode == null || rightTreeNode == null || leftTreeNode.value != rightTreeNode.value)
 			{
 				result = false;
 				break;
 			}
-			else if(leftNode != null && rightNode != null)
+			else if(leftTreeNode != null && rightTreeNode != null)
 			{
-				queue.offer(leftNode.left);
-				queue.offer(rightNode.right);
+				queue.offer(leftTreeNode.left);
+				queue.offer(rightTreeNode.right);
 
-				queue.offer(leftNode.right);
-				queue.offer(rightNode.left);
+				queue.offer(leftTreeNode.right);
+				queue.offer(rightTreeNode.left);
 			}
 		}
 
