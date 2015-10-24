@@ -1,5 +1,8 @@
 package com.hally.taskAp;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 /**
  * Created by Kateryna Levshova
  *
@@ -12,7 +15,7 @@ public class TreeSymmetryAnalizer
 	 * @param parent
 	 * @return true - if symmetric, false - if is not
 	 */
-	public Boolean isSymmetric(Node parent)
+	public Boolean isSymmetricRecursion(Node parent)
 	{
 		if (parent == null)
 		{
@@ -46,5 +49,45 @@ public class TreeSymmetryAnalizer
 		}
 
 		return  result;
+	}
+
+	public Boolean isSymmetricIterative(Node node)
+	{
+		Boolean result = true;
+
+		if(node == null)
+		{
+			return false;
+		}
+
+		Queue<Node> queue = new LinkedList<>();
+		queue.offer(node.left);
+		queue.offer(node.right);
+
+		while (!queue.isEmpty())
+		{
+			Node leftNode = queue.poll();
+			Node rightNode = queue.poll();
+
+			if(leftNode == null && rightNode == null)
+			{
+				result = true;
+			}
+			else if (leftNode == null || rightNode == null || leftNode.value != rightNode.value)
+			{
+				result = false;
+				break;
+			}
+			else if(leftNode != null && rightNode != null)
+			{
+				queue.offer(leftNode.left);
+				queue.offer(rightNode.right);
+
+				queue.offer(leftNode.right);
+				queue.offer(rightNode.left);
+			}
+		}
+
+		return result;
 	}
 }
