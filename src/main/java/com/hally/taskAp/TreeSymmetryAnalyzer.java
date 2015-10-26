@@ -8,7 +8,7 @@ import java.util.Queue;
  *
  * @date 02.10.2015
  */
-public class TreeSymmetryAnalizer
+public class TreeSymmetryAnalyzer
 {
 	/**
 	 * Checks if the Tree is symmetric
