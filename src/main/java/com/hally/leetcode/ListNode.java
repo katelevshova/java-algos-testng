@@ -8,12 +8,12 @@ public class ListNode
 	public int value;
 	public ListNode next = null;
 
-	public void ListNode(int v)
+	public ListNode(int v)
 	{
 		value = v;
 	}
 
-	public void ListNode(int v, ListNode nextNode)
+	public ListNode(int v, ListNode nextNode)
 	{
 		value = v;
 		next = nextNode;
