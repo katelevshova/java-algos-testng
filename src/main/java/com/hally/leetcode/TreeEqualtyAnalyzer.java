@@ -7,13 +7,16 @@ import com.hally.taskAp.TreeNode;
  */
 public class TreeEqualtyAnalyzer
 {
-	public boolean isSameTree(TreeNode p, TreeNode q)
+	public boolean isSameTreeRecursion(TreeNode p, TreeNode q)
 	{
-		boolean result = true;
-
 		if (p == null && q == null)
 		{
 			return true;
+		}
+
+		if(p == null || q == null)
+		{
+			return false;
 		}
 
 		if(p.value != q.value)
@@ -21,10 +24,7 @@ public class TreeEqualtyAnalyzer
 			return false;
 		}
 
-		result =  isSameTreeHelper(p.left, q.left) && isSameTreeHelper(p.right, q.right);
-
-
-		return result;
+		return  isSameTreeHelper(p.left, q.left) && isSameTreeHelper(p.right, q.right);
 	}
 
 	private boolean isSameTreeHelper(TreeNode node1, TreeNode node2)
