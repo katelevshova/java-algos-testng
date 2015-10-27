@@ -7,7 +7,7 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 /**
- * Created by Oni on 21.10.2015.
+ * Created by Kateryna Levshova on 21.10.2015.
  */
 public class TreeMaxDepthAnalyzerTest
 {

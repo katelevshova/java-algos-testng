@@ -5,7 +5,7 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
 /**
- * Created by Oni on 23.10.2015.
+ * Created by Kateryna Levshova on 23.10.2015.
  */
 public class DeleteNodeLinkedListTest
 {

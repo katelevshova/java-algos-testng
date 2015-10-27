@@ -1,7 +1,7 @@
 package com.hally.leetcode;
 
 /**
- * Created by Oni on 21.10.2015.
+ * Created by Kateryna Levshova on 21.10.2015.
  */
 public class AddDigitsSolution
 {
