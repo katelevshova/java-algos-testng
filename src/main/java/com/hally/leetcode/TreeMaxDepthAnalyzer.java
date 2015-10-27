@@ -7,7 +7,7 @@ import java.util.LinkedList;
 /**
  * Created by Oni on 21.10.2015.
  */
-public class MaxDepthBinaryTree
+public class TreeMaxDepthAnalyzer
 {
 	/**
 	 * Given a binary tree, find its maximum depth.
