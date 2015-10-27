@@ -33,6 +33,7 @@ public class TreeEqualtyAnalizerTest
 		TreeNode root2 = new TreeNode(10, leftNode, rightNode);
 
 		Assert.assertTrue(_treeEqualtyAnalyzer.isSameTreeRecursion(root1, root2));
+		Assert.assertTrue(_treeEqualtyAnalyzer.isSameTreeIterative(root1, root2));
 	}
 
 	@Test
@@ -41,12 +42,15 @@ public class TreeEqualtyAnalizerTest
 //				10							10
 		Assert.assertTrue(_treeEqualtyAnalyzer.isSameTreeRecursion(new TreeNode(10),
 				new TreeNode(10)));
+		Assert.assertTrue(_treeEqualtyAnalyzer.isSameTreeIterative(new TreeNode(10),
+				new TreeNode(10)));
 	}
 
 	@Test
 	public void testIsSymmetric_Single_Root_Null()
 	{
 		Assert.assertTrue(_treeEqualtyAnalyzer.isSameTreeRecursion(null, null));
+		Assert.assertTrue(_treeEqualtyAnalyzer.isSameTreeIterative(null, null));
 	}
 
 	@Test
@@ -63,6 +67,7 @@ public class TreeEqualtyAnalizerTest
 		TreeNode root2 = new TreeNode(10, leftNode, rightNode);
 
 		Assert.assertTrue(_treeEqualtyAnalyzer.isSameTreeRecursion(root1, root2));
+		Assert.assertTrue(_treeEqualtyAnalyzer.isSameTreeIterative(root1, root2));
 	}
 
 	@Test
@@ -79,6 +84,7 @@ public class TreeEqualtyAnalizerTest
 		TreeNode root2 = new TreeNode(10, leftNode, rightNode);
 
 		Assert.assertTrue(_treeEqualtyAnalyzer.isSameTreeRecursion(root1, root2));
+		Assert.assertTrue(_treeEqualtyAnalyzer.isSameTreeIterative(root1, root2));
 	}
 
 	@Test
@@ -92,6 +98,20 @@ public class TreeEqualtyAnalizerTest
 		TreeNode root2 = new TreeNode(10, leftNode, null);
 
 		Assert.assertTrue(_treeEqualtyAnalyzer.isSameTreeRecursion(root1, root2));
+		Assert.assertTrue(_treeEqualtyAnalyzer.isSameTreeIterative(root1, root2));
+	}
+
+	@Test
+	public void testIsSymmetric_2_Level_Right_Tree()
+	{
+//				10					10
+//				 \					 \
+//				 15					  15
+		TreeNode root1 = new TreeNode(10, null, new TreeNode(15));
+		TreeNode root2 = new TreeNode(10, null, new TreeNode(15));
+
+		Assert.assertTrue(_treeEqualtyAnalyzer.isSameTreeRecursion(root1, root2));
+		Assert.assertTrue(_treeEqualtyAnalyzer.isSameTreeIterative(root1, root2));
 	}
 
 	@Test
@@ -109,6 +129,7 @@ public class TreeEqualtyAnalizerTest
 		TreeNode root2 = new TreeNode(10, leftNode, rightNode2);
 
 		Assert.assertFalse(_treeEqualtyAnalyzer.isSameTreeRecursion(root1, root2));
+		Assert.assertFalse(_treeEqualtyAnalyzer.isSameTreeIterative(root1, root2));
 	}
 
 	@Test
@@ -122,12 +143,14 @@ public class TreeEqualtyAnalizerTest
 		TreeNode root2 = new TreeNode(10, leftNode, new TreeNode(20));
 
 		Assert.assertFalse(_treeEqualtyAnalyzer.isSameTreeRecursion(root1, root2));
+		Assert.assertFalse(_treeEqualtyAnalyzer.isSameTreeIterative(root1, root2));
 	}
 
 	@Test
 	public void testIsSymmetric_Single_Root_False()
 	{
 		Assert.assertFalse(_treeEqualtyAnalyzer.isSameTreeRecursion(null, new TreeNode(5)));
+		Assert.assertFalse(_treeEqualtyAnalyzer.isSameTreeIterative(null, new TreeNode(5)));
 	}
 
 	@Test
@@ -144,6 +167,7 @@ public class TreeEqualtyAnalizerTest
 		TreeNode root2 = new TreeNode(10, leftNode, rightNode);
 
 		Assert.assertTrue(_treeEqualtyAnalyzer.isSameTreeRecursion(root1, root2));
+		Assert.assertTrue(_treeEqualtyAnalyzer.isSameTreeIterative(root1, root2));
 	}
 
 }
