@@ -32,13 +32,16 @@ public class TreeInvertSolutionTest
 		TreeNode left = new TreeNode(20, new TreeNode(45), new TreeNode(7));
 		TreeNode right = new TreeNode(50);
 		TreeNode root = new TreeNode(10, left, right);
-		TreeNode actualNode = _treeInvertSolution.invertTreeResursion(root);
+		TreeNode actualNode = _treeInvertSolution.invertTreeRecursion(root);
 
 		TreeNode leftExp = new TreeNode(50);
 		TreeNode rightExp = new TreeNode(20, new TreeNode(7), new TreeNode(45));
 		TreeNode expectedNode = new TreeNode(10, leftExp, rightExp);
 
 		Assert.assertTrue(_treeEqualtyAnalyzer.isSameTreeIterative(actualNode, expectedNode));
+
+//		TreeNode actualNodeIterative = _treeInvertSolution.invertTreeIterative(root);
+//		Assert.assertTrue(_treeEqualtyAnalyzer.isSameTreeIterative(actualNodeIterative, expectedNode));
 	}
 
 	@Test
@@ -52,7 +55,7 @@ public class TreeInvertSolutionTest
 		TreeNode left = new TreeNode(30);
 		TreeNode right = new TreeNode(50, null, new TreeNode(40));
 		TreeNode root = new TreeNode(10, left, right);
-		TreeNode actualNode = _treeInvertSolution.invertTreeResursion(root);
+		TreeNode actualNode = _treeInvertSolution.invertTreeRecursion(root);
 
 		TreeNode leftExp = new TreeNode(50, new TreeNode(40), null);
 		TreeNode rightExp = new TreeNode(30);
@@ -66,7 +69,7 @@ public class TreeInvertSolutionTest
 	{
 //	actual:		10			expected:	10
 		TreeNode root = new TreeNode(10);
-		TreeNode actualNode = _treeInvertSolution.invertTreeResursion(root);
+		TreeNode actualNode = _treeInvertSolution.invertTreeRecursion(root);
 		Assert.assertTrue(actualNode.left == null);
 		Assert.assertTrue(actualNode.right == null);
 		Assert.assertTrue(actualNode.value == 10);
@@ -75,7 +78,7 @@ public class TreeInvertSolutionTest
 	@Test
 	public void invertTree_Null()
 	{
-		TreeNode actualNode = _treeInvertSolution.invertTreeResursion(null);
+		TreeNode actualNode = _treeInvertSolution.invertTreeRecursion(null);
 		Assert.assertTrue(actualNode == null);
 	}
 
@@ -86,10 +89,13 @@ public class TreeInvertSolutionTest
 //				/\						/\
 //			20		50				50		20
 		TreeNode root = new TreeNode(10, new TreeNode(20), new TreeNode(50));
-		TreeNode actualNode = _treeInvertSolution.invertTreeResursion(root);
+		TreeNode actualNodeRecursion = _treeInvertSolution.invertTreeRecursion(root);
 
 		TreeNode expectedNode = new TreeNode(10, new TreeNode(50), new TreeNode(20));
-		Assert.assertTrue(_treeEqualtyAnalyzer.isSameTreeIterative(actualNode, expectedNode));
+		Assert.assertTrue(_treeEqualtyAnalyzer.isSameTreeIterative(actualNodeRecursion, expectedNode));
+
+//		TreeNode actualNodeIterative = _treeInvertSolution.invertTreeIterative(root);
+//		Assert.assertTrue(_treeEqualtyAnalyzer.isSameTreeIterative(actualNodeIterative, expectedNode));
 	}
 
 	@Test
@@ -102,7 +108,7 @@ public class TreeInvertSolutionTest
 //						40		 40
 		TreeNode right = new TreeNode(50, null, new TreeNode(40));
 		TreeNode root = new TreeNode(10, null, right);
-		TreeNode actualNode = _treeInvertSolution.invertTreeResursion(root);
+		TreeNode actualNode = _treeInvertSolution.invertTreeRecursion(root);
 
 		TreeNode leftExp = new TreeNode(50, new TreeNode(40), null);
 		TreeNode expectedNode = new TreeNode(10, leftExp, null);
@@ -120,7 +126,7 @@ public class TreeInvertSolutionTest
 //		  5					 					5
 		TreeNode left = new TreeNode(25, new TreeNode(5), null);
 		TreeNode root = new TreeNode(10, left, null );
-		TreeNode actualNode = _treeInvertSolution.invertTreeResursion(root);
+		TreeNode actualNode = _treeInvertSolution.invertTreeRecursion(root);
 
 		TreeNode rightExp = new TreeNode(25, null, new TreeNode(5));
 		TreeNode expectedNode = new TreeNode(10, null, rightExp);
