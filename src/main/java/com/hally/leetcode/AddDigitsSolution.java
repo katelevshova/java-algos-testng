@@ -7,6 +7,7 @@ public class AddDigitsSolution
 {
 	public static final String ERROR = "Num must be > 0";
 	/**
+	 *  Task:
 	 *  Given a non-negative integer num, repeatedly add all its digits until the result has only
 	 *  one digit.  For example:
 	 *  Given num = 38, the process is like:

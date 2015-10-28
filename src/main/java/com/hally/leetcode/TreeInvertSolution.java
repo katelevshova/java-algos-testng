@@ -10,6 +10,10 @@ import java.util.Queue;
  */
 public class TreeInvertSolution
 {
+	/**
+	 * Task: Invert a binary tree.
+	 */
+
 	//Note: best implementation
 	public TreeNode invertTreeRecursion(TreeNode root)
 	{
