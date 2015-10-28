@@ -1,5 +1,11 @@
 package com.hally.leetcode;
 
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Hashtable;
+import java.util.List;
+import java.util.Set;
+
 /**
  * Created by Kateryna Levshova on 28.10.2015.
  */
@@ -17,10 +23,16 @@ public class HasArrayDuplicatesSolution
 	 * @param nums
 	 * @return
 	 */
-	public boolean containsDuplicate(int[] nums)
+	public boolean containsDuplicate(Integer[] nums)
 	{
-		boolean result = false;
+		//NOTE: if use int[] nums then won't work
+		if(nums.length < 2)
+		{
+			return false;
+		}
 
-		return result;
+		Set set = new HashSet(Arrays.asList(nums));
+
+		return set.size() < nums.length;
 	}
 }
