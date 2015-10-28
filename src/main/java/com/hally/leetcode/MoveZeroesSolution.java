@@ -20,22 +20,18 @@ public class MoveZeroesSolution
 			if(scrArray[i] == 0)
 			{
 				counter++;
-
 				int end = scrArray.length - counter;
 
 				for(int j = i; j< end; j++)
 				{
 					scrArray[j] = scrArray[j+1];
 				}
-
 				scrArray[end] = 0;
 			}
-
 			length--;
 		}
 
 		System.out.println(Arrays.toString(scrArray));
-
 		return scrArray;
 	}
 }
