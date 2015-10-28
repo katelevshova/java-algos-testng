@@ -1,6 +1,9 @@
 package com.hally.leetcode;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Hashtable;
 import java.util.List;
@@ -23,7 +26,7 @@ public class HasArrayDuplicatesSolution
 	 * @param nums
 	 * @return
 	 */
-	public boolean containsDuplicate(Integer[] nums)
+	public boolean containsDuplicateInteger(Integer[] nums)
 	{
 		//NOTE: if use int[] nums then won't work
 		if(nums.length < 2)
@@ -32,6 +35,25 @@ public class HasArrayDuplicatesSolution
 		}
 
 		Set set = new HashSet(Arrays.asList(nums));
+
+		return set.size() < nums.length;
+	}
+
+	public boolean containsDuplicate(int[] nums)
+	{
+		//NOTE: if use int[] nums then won't work
+		if(nums.length < 2)
+		{
+			return false;
+		}
+
+		List<Integer> intList = new ArrayList<Integer>();
+		for (int index = 0; index < nums.length; index++)
+		{
+			intList.add(nums[index]);
+		}
+
+		Set set = new HashSet(intList);
 
 		return set.size() < nums.length;
 	}
