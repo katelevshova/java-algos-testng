@@ -7,7 +7,7 @@ import com.hally.taskAp.TreeNode;
  */
 public class TreeInvertSolution
 {
-	public TreeNode invertTree(TreeNode root)
+	public TreeNode invertTreeResursion(TreeNode root)
 	{
 		if(root == null)
 		{
@@ -46,7 +46,7 @@ public class TreeInvertSolution
 			return result;
 		}
 
-		TreeNode other = new TreeNode(value, leftNode, rightNode);
-		return other;
+		TreeNode result = new TreeNode(value, leftNode, rightNode);
+		return result;
 	}
 }
