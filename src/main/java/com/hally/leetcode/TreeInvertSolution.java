@@ -68,4 +68,36 @@ public class TreeInvertSolution
 		TreeNode result = new TreeNode(value, leftNode, rightNode);
 		return result;
 	}
+
+	public TreeNode invertTreeIterative(TreeNode root)
+	{
+		if(root == null)
+		{
+			return root;
+		}
+
+		Queue<TreeNode> queue = new LinkedList<>();
+		queue.offer(root);
+
+		while (!queue.isEmpty())
+		{
+			TreeNode node = queue.poll();
+
+			if(node.left != null)
+			{
+				queue.offer(node.left);
+			}
+
+			if(node.right != null)
+			{
+				queue.offer(node.right);
+			}
+
+			TreeNode nodeTmp = node.left;
+			node.left = node.right;
+			node.right = nodeTmp;
+		}
+
+		return root;
+	}
 }
