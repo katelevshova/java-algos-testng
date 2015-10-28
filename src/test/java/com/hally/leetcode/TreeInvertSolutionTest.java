@@ -40,8 +40,8 @@ public class TreeInvertSolutionTest
 
 		Assert.assertTrue(_treeEqualtyAnalyzer.isSameTreeIterative(actualNode, expectedNode));
 
-//		TreeNode actualNodeIterative = _treeInvertSolution.invertTreeIterative(root);
-//		Assert.assertTrue(_treeEqualtyAnalyzer.isSameTreeIterative(actualNodeIterative, expectedNode));
+		TreeNode actualNodeIterative = _treeInvertSolution.invertTreeIterative(root);
+		Assert.assertTrue(_treeEqualtyAnalyzer.isSameTreeIterative(actualNodeIterative, expectedNode));
 	}
 
 	@Test
@@ -94,8 +94,8 @@ public class TreeInvertSolutionTest
 		TreeNode expectedNode = new TreeNode(10, new TreeNode(50), new TreeNode(20));
 		Assert.assertTrue(_treeEqualtyAnalyzer.isSameTreeIterative(actualNodeRecursion, expectedNode));
 
-//		TreeNode actualNodeIterative = _treeInvertSolution.invertTreeIterative(root);
-//		Assert.assertTrue(_treeEqualtyAnalyzer.isSameTreeIterative(actualNodeIterative, expectedNode));
+		TreeNode actualNodeIterative = _treeInvertSolution.invertTreeIterative(root);
+		Assert.assertTrue(_treeEqualtyAnalyzer.isSameTreeIterative(actualNodeIterative, expectedNode));
 	}
 
 	@Test
