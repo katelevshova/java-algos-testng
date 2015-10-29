@@ -2,10 +2,7 @@ package com.hally.leetcode;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.HashSet;
-import java.util.Hashtable;
 import java.util.List;
 import java.util.Set;
 
@@ -15,20 +12,39 @@ import java.util.Set;
 public class HasArrayDuplicatesSolution
 {
 	/**
-	 * Task:
-	 * Given an array of integers, find if the array contains any duplicates.
-	 * Your function should return true if any value appears at least twice in the array,
-	 * and it should return false if every element is distinct.
+	 * Task: Given an array of integers, find if the array contains any duplicates. Your function
+	 * should return true if any value appears at least twice in the array, and it should return
+	 * false if every element is distinct.
 	 */
 
-	/**
-	 * Check if array contains duplicates or not
-	 * @param nums
-	 * @return
-	 */
+	//Best solution
+	public boolean containsDuplicate(int[] nums)
+	{
+		if (nums.length < 2)
+		{
+			return false;
+		}
+
+		Set set = new HashSet();
+
+		for (int i = 0; i < nums.length; i++)
+		{
+			if (set.contains(nums[i]))
+			{
+				return true;
+			}
+			else
+			{
+				set.add(nums[i]);
+			}
+		}
+
+		return false;
+	}
+
 	public boolean containsDuplicateInteger(Integer[] nums)
 	{
-		if(nums.length < 2)
+		if (nums.length < 2)
 		{
 			return false;
 		}
@@ -40,7 +56,7 @@ public class HasArrayDuplicatesSolution
 
 	public boolean containsDuplicate_old_version(int[] nums)
 	{
-		if(nums.length < 2)
+		if (nums.length < 2)
 		{
 			return false;
 		}
@@ -55,30 +71,5 @@ public class HasArrayDuplicatesSolution
 		Set set = new HashSet(intList);
 
 		return set.size() < nums.length;
-	}
-
-	//Best solution
-	public boolean containsDuplicate(int[] nums)
-	{
-		if(nums.length < 2)
-		{
-			return false;
-		}
-
-		Set set = new HashSet();
-
-		for(int i = 0; i < nums.length; i++)
-		{
-			if(set.contains(nums[i]))
-			{
-				return true;
-			}
-			else
-			{
-				set.add(nums[i]);
-			}
-		}
-
-		return false;
 	}
 }
