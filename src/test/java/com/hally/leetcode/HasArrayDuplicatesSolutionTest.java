@@ -13,7 +13,9 @@ public class HasArrayDuplicatesSolutionTest
 	{
 		HasArrayDuplicatesSolution solution = new HasArrayDuplicatesSolution();
 		Assert.assertTrue(solution.containsDuplicateInteger(new Integer[]{1, 2, 3, 4, 2, 6}));
-		Assert.assertTrue(solution.containsDuplicate(new int[]{1, 2, 3, 4, 2, 6}));
+
+		boolean actualResult = solution.containsDuplicate(new int[]{1, 2, 3, 4, 2, 6});
+		Assert.assertTrue(actualResult);
 	}
 
 	@Test

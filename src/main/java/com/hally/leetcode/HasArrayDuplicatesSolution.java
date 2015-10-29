@@ -28,26 +28,25 @@ public class HasArrayDuplicatesSolution
 	 */
 	public boolean containsDuplicateInteger(Integer[] nums)
 	{
-		//NOTE: if use int[] nums then won't work
 		if(nums.length < 2)
 		{
 			return false;
 		}
 
-		Set set = new HashSet(Arrays.asList(nums));
+		Set set = new HashSet(Arrays.asList(nums)); //NOTE: if use int[] nums then won't work
 
 		return set.size() < nums.length;
 	}
 
-	public boolean containsDuplicate(int[] nums)
+	public boolean containsDuplicate_old_version(int[] nums)
 	{
-		//NOTE: if use int[] nums then won't work
 		if(nums.length < 2)
 		{
 			return false;
 		}
 
-		List<Integer> intList = new ArrayList<Integer>();
+		List<Integer> intList = new ArrayList<Integer>(); //NOTE: needs because int[] -> Integer
+
 		for (int index = 0; index < nums.length; index++)
 		{
 			intList.add(nums[index]);
@@ -56,5 +55,30 @@ public class HasArrayDuplicatesSolution
 		Set set = new HashSet(intList);
 
 		return set.size() < nums.length;
+	}
+
+	//Best solution
+	public boolean containsDuplicate(int[] nums)
+	{
+		if(nums.length < 2)
+		{
+			return false;
+		}
+
+		Set set = new HashSet();
+
+		for(int i = 0; i < nums.length; i++)
+		{
+			if(set.contains(nums[i]))
+			{
+				return true;
+			}
+			else
+			{
+				set.add(nums[i]);
+			}
+		}
+
+		return false;
 	}
 }
