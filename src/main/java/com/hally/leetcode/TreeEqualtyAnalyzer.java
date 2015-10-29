@@ -17,6 +17,7 @@ public class TreeEqualtyAnalyzer
 	 *  and the nodes have the same value.
 	 */
 
+	//NOTE: 0 ms
 	public boolean isSameTreeRecursion(TreeNode node1, TreeNode node2)
 	{
 		if (node1 == null && node2 == null)

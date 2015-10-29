@@ -17,6 +17,7 @@ public class MoveZeroesSolution
 	 *  Minimize the total number of operations.
 	 */
 
+	//NOTE: 28 ms
 	public int[] moveZeroes(int[] scrArray)
 	{
 		int i = 0;

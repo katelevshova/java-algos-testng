@@ -15,6 +15,7 @@ public class DeleteNodeLinkedList
 	 * the linked list should become 1 -> 2 -> 4 after calling your function.
 	 */
 
+	//NOTE: 1 ms
 	public void deleteListNode(ListNode listNode)
 	{
 		if(listNode != null && listNode.next != null)

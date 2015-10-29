@@ -16,6 +16,7 @@ public class TreeMaxDepthAnalyzer
 	 * from the root treeNode down to the farthest leaf treeNode.
 	 */
 
+	//NOTE: 1 ms
 	public int maxDepthRecursion(TreeNode treeNode)
 	{
 		if(treeNode == null)

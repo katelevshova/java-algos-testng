@@ -14,7 +14,7 @@ public class TreeInvertSolution
 	 * Task: Invert a binary tree.
 	 */
 
-	//Note: best implementation
+	//NOTE: best implementation - 0 ms
 	public TreeNode invertTreeRecursion(TreeNode root)
 	{
 		if(root == null)

@@ -20,6 +20,7 @@ public class NimGame
 	 * 1, 2, or 3 stones you remove, the last stone will always be removed by your friend.
 	 */
 
+	//NOTE: 0 ms
 	public boolean canWinNim(int n)
 	{
 		if(n < 1)

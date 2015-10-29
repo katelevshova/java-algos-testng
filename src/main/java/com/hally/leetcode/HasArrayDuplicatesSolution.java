@@ -17,7 +17,7 @@ public class HasArrayDuplicatesSolution
 	 * false if every element is distinct.
 	 */
 
-	//Best solution
+	//NOTE: My best solution - 15 ms
 	public boolean containsDuplicate(int[] nums)
 	{
 		if (nums.length < 2)
