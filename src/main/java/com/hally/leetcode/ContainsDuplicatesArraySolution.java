@@ -9,7 +9,7 @@ import java.util.Set;
 /**
  * Created by Kateryna Levshova on 28.10.2015.
  */
-public class HasArrayDuplicatesSolution
+public class ContainsDuplicatesArraySolution
 {
 	/**
 	 * Task: Given an array of integers, find if the array contains any duplicates. Your function
@@ -27,15 +27,15 @@ public class HasArrayDuplicatesSolution
 
 		Set set = new HashSet();
 
-		for (int i = 0; i < nums.length; i++)
+		for (int elem: nums)
 		{
-			if (set.contains(nums[i]))
+			if (set.contains(elem))
 			{
 				return true;
 			}
 			else
 			{
-				set.add(nums[i]);
+				set.add(elem);
 			}
 		}
 
@@ -61,11 +61,11 @@ public class HasArrayDuplicatesSolution
 			return false;
 		}
 
-		List<Integer> intList = new ArrayList<Integer>(); //NOTE: needs because int[] -> Integer
+		List<Integer> intList = new ArrayList<>(); //NOTE: needs because int[] -> Integer
 
-		for (int index = 0; index < nums.length; index++)
+		for (int elem: nums)
 		{
-			intList.add(nums[index]);
+			intList.add(elem);
 		}
 
 		Set set = new HashSet(intList);
