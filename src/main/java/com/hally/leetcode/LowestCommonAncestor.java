@@ -27,18 +27,45 @@ public class LowestCommonAncestor
 	 * according to the LCA definition.
 	 */
 
-	public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q)
+	//Note: 11 ms
+	public TreeNode lowestCommonAncestor(TreeNode root, TreeNode left, TreeNode right)
 	{
-		if(root == null || p == null && q == null)
+		if(root == null || left == null && right == null)
 		{
 			return root;
 		}
 
-		TreeNode resultNode = root;
+		if(left.value < root.value && right.value < root.value)
+		{
+			return lowestCommonAncestor(root.left, left, right);
+		}
 
-		TreeNode left = lowestCommonAncestor(p,p.left, p.right);
+		if(right.value > root.value && left.value > root.value)
+		{
+			return lowestCommonAncestor(root.right, left, right);
+		}
 
-		return resultNode;
+
+		return root;
 	}
 
+	public TreeNode lowestCommonAncestorMath(TreeNode root, TreeNode left, TreeNode right)
+	{
+		if(root == null || left == null && right == null)
+		{
+			return root;
+		}
+
+		if(Math.max(left.value, right.value) < root.value)
+		{
+			return lowestCommonAncestor(root.left, left, right);
+		}
+
+		if(Math.min(left.value, right.value) > root.value)
+		{
+			return lowestCommonAncestor(root.right, left, right);
+		}
+
+		return root;
+	}
 }
