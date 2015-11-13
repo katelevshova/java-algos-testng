@@ -13,13 +13,6 @@ import static org.testng.Assert.*;
  */
 public class LowestCommonAncestorTest
 {
-
-	@BeforeMethod
-	public void setUp()
-	{
-
-	}
-
 	@Test
 	public void testLowestCommonAncestor_Root_1_Layer()
 	{
@@ -31,11 +24,17 @@ public class LowestCommonAncestorTest
 		TreeNode left = new TreeNode(2);
 		TreeNode right = new TreeNode(8);
 		TreeNode root = new TreeNode(6, left, right);
+
 		TreeNode actualResult = lowestCommonAncestor.lowestCommonAncestor(root, left, right);
 		Assert.assertEquals(actualResult.value, root.value);
 
 		TreeNode actualResultMath = lowestCommonAncestor.lowestCommonAncestorMath(root, left, right);
 		Assert.assertEquals(actualResultMath.value, root.value);
+
+		TreeNode actualResultIterative= lowestCommonAncestor.lowestCommonAncestorIterative(root,
+				left,
+				right);
+		Assert.assertEquals(actualResultIterative.value, root.value);
 	}
 
 	@Test
@@ -60,6 +59,10 @@ public class LowestCommonAncestorTest
 
 		TreeNode actualResultMath = lowestCommonAncestor.lowestCommonAncestorMath(root, left, node_4);
 		Assert.assertEquals(actualResultMath.value, 2);
+
+		TreeNode actualResultIterative = lowestCommonAncestor.lowestCommonAncestorIterative(root,
+				left, node_4);
+		Assert.assertEquals(actualResultIterative.value, 2);
 	}
 
 	@Test
@@ -84,6 +87,11 @@ public class LowestCommonAncestorTest
 
 		TreeNode actualResultMath = lowestCommonAncestor.lowestCommonAncestorMath(root, new TreeNode(7),  new TreeNode(9));
 		Assert.assertEquals(actualResultMath.value, 8);
+
+		TreeNode actualResultIterative = lowestCommonAncestor.lowestCommonAncestorIterative(root,
+				new
+						TreeNode(7), new TreeNode(9));
+		Assert.assertEquals(actualResultIterative.value, 8);
 	}
 
 	@Test
@@ -110,5 +118,123 @@ public class LowestCommonAncestorTest
 		TreeNode actualResultMath = lowestCommonAncestor.lowestCommonAncestorMath(root, new TreeNode
 						(3), new TreeNode(7));
 		Assert.assertEquals(actualResultMath.value, 6);
+
+		TreeNode actualResultIterative = lowestCommonAncestor.lowestCommonAncestorIterative(root,
+				new
+						TreeNode(3), new TreeNode(7));
+		Assert.assertEquals(actualResultIterative.value, 6);
+	}
+
+	@Test
+	public void testLowestCommonAncestor_LeftSide()
+	{
+//				  	6
+//				/
+//			  2
+//			/	\
+//		  0		 4
+//				/  \
+//			  3		5
+		LowestCommonAncestor lowestCommonAncestor = new LowestCommonAncestor();
+
+		TreeNode node_4 =  new TreeNode(4, new TreeNode(3), new TreeNode(5));
+		TreeNode left = new TreeNode(2, new TreeNode(0), node_4);
+		TreeNode root = new TreeNode(6, left, null);
+
+		TreeNode actualResult = lowestCommonAncestor.lowestCommonAncestor(root, new TreeNode(3),
+				new TreeNode(4));
+		Assert.assertEquals(actualResult.value, 4);
+
+		TreeNode actualResultMath = lowestCommonAncestor.lowestCommonAncestorMath(root, new TreeNode
+				(3), new TreeNode(4));
+		Assert.assertEquals(actualResultMath.value, 4);
+
+		TreeNode actualResultIterative = lowestCommonAncestor.lowestCommonAncestorIterative(root,
+				new TreeNode(3), new TreeNode(4));
+		Assert.assertEquals(actualResultIterative.value, 4);
+	}
+
+	@Test
+	public void testLowestCommonAncestor_Null_Second()
+	{
+//				  	6
+//				/
+//			  2
+//			/	\
+//		  0		 4
+//				/  \
+//			  3		5
+		LowestCommonAncestor lowestCommonAncestor = new LowestCommonAncestor();
+
+		TreeNode node_4 =  new TreeNode(4, new TreeNode(3), new TreeNode(5));
+		TreeNode left = new TreeNode(2, new TreeNode(0), node_4);
+		TreeNode root = new TreeNode(6, left, null);
+
+		TreeNode actualResult = lowestCommonAncestor.lowestCommonAncestor(root, new TreeNode(3),
+				null);
+		Assert.assertEquals(actualResult.value, 3);
+
+		TreeNode actualResultMath = lowestCommonAncestor.lowestCommonAncestorMath(root, new TreeNode
+				(3), null);
+		Assert.assertEquals(actualResultMath.value, 3);
+
+		TreeNode actualResultIterative = lowestCommonAncestor.lowestCommonAncestorIterative(root,
+				new TreeNode(3), null);
+		Assert.assertEquals(actualResultIterative.value, 3);
+	}
+
+	@Test
+	public void testLowestCommonAncestor_Null_First()
+	{
+//				  	6
+//				/
+//			  2
+//			/	\
+//		  0		 4
+//				/  \
+//			  3		5
+		LowestCommonAncestor lowestCommonAncestor = new LowestCommonAncestor();
+
+		TreeNode node_4 =  new TreeNode(4, new TreeNode(3), new TreeNode(5));
+		TreeNode left = new TreeNode(2, new TreeNode(0), node_4);
+		TreeNode root = new TreeNode(6, left, null);
+
+		TreeNode actualResult = lowestCommonAncestor.lowestCommonAncestor(root, null,
+				new TreeNode(3));
+		Assert.assertEquals(actualResult.value, 3);
+
+		TreeNode actualResultMath = lowestCommonAncestor.lowestCommonAncestorMath(root, null, new TreeNode(3));
+		Assert.assertEquals(actualResultMath.value, 3);
+
+		TreeNode actualResultIterative = lowestCommonAncestor.lowestCommonAncestorIterative(root,
+				null, new TreeNode(3));
+		Assert.assertEquals(actualResultIterative.value, 3);
+	}
+
+	@Test
+	public void testLowestCommonAncestor_Null_Both()
+	{
+//				  	6
+//				/
+//			  2
+//			/	\
+//		  0		 4
+//				/  \
+//			  3		5
+		LowestCommonAncestor lowestCommonAncestor = new LowestCommonAncestor();
+
+		TreeNode node_4 =  new TreeNode(4, new TreeNode(3), new TreeNode(5));
+		TreeNode left = new TreeNode(2, new TreeNode(0), node_4);
+		TreeNode root = new TreeNode(6, left, null);
+
+		TreeNode actualResult = lowestCommonAncestor.lowestCommonAncestor(root, null, null);
+		Assert.assertEquals(actualResult.value, root.value);
+
+		TreeNode actualResultMath = lowestCommonAncestor.lowestCommonAncestorMath(root, null, null);
+		Assert.assertEquals(actualResultMath.value, root.value);
+
+		TreeNode actualResultIterative = lowestCommonAncestor.lowestCommonAncestorIterative(root,
+				null, null);
+		Assert.assertEquals(actualResultIterative.value, root.value);
 	}
 }
