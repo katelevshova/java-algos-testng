@@ -29,4 +29,23 @@ public class ValidAnagramTest
 		Assert.assertFalse(validAnagram.isAnagram("anagram", "anagram!"));
 		Assert.assertFalse(validAnagram.isAnagram("anagram", "asdfghj"));
 	}
+
+	@Test
+	public void testIsAnagramBestSolution_True()
+	{
+		ValidAnagram validAnagram = new ValidAnagram();
+		Assert.assertTrue(validAnagram.isAnagramBestSolution("anagram", "nagrama"));
+		Assert.assertTrue(validAnagram.isAnagramBestSolution("anagram*", "grama*na"));
+		Assert.assertTrue(validAnagram.isAnagramBestSolution("4anagram*", "gr4ama*na"));
+	}
+
+	@Test
+	public void testIsAnagramBestSolution_False()
+	{
+		ValidAnagram validAnagram = new ValidAnagram();
+		Assert.assertFalse(validAnagram.isAnagramBestSolution("an", "nagrama"));
+		Assert.assertFalse(validAnagram.isAnagramBestSolution("anagram", ""));
+		Assert.assertFalse(validAnagram.isAnagramBestSolution("anagram", "anagram!"));
+		Assert.assertFalse(validAnagram.isAnagramBestSolution("anagram", "asdfghj"));
+	}
 }

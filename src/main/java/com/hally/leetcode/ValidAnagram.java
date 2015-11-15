@@ -1,6 +1,7 @@
 package com.hally.leetcode;
 
 import java.util.Arrays;
+import java.util.Objects;
 
 /**
  * Created by Kateryna Levshova on 14.11.2015.
@@ -56,5 +57,21 @@ public class ValidAnagram
 		}
 
 		return false;
+	}
+
+	public boolean isAnagramBestSolution(String s, String t)
+	{
+		if(s.length() < t.length() )
+		{
+			return false;
+		}
+
+		char[] chars1 = s.toCharArray();
+		char[] chars2 = t.toCharArray();
+
+		Arrays.sort(chars1); // Arrays.sort() is implemented using Dual-Pivot QuickSort - O(n*logn)
+		Arrays.sort(chars2);
+
+		return Objects.equals(String.valueOf(chars1), String.valueOf(chars2));
 	}
 }
