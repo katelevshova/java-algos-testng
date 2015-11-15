@@ -57,4 +57,20 @@ public class ExcelSheetColumnNumber
 
 		return result;
 	}
+
+	// Solution similar to <code>StringToIntConverter</code>
+	public int titleToNumberBestWay(String s)
+	{
+		int sum = 0;
+
+		s = s.toUpperCase();
+
+		for(int i = 0; i < s.length(); i++)
+		{
+			sum *= 26; // 26 - letters in English alphabet
+			sum += (s.charAt(i) - 'A' + 1); // ASCII code of 'A' is 65, 'B' - 66
+		}
+
+		return sum;
+	}
 }
