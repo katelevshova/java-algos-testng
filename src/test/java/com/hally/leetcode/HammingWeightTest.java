@@ -12,7 +12,7 @@ public class HammingWeightTest
 {
 
 	@Test
-	public void testHammingWeight() throws Exception
+	public void testHammingWeight()
 	{
 		HammingWeight hammingWeight = new HammingWeight();
 		Assert.assertEquals(hammingWeight.hammingWeight(11), 3);
@@ -20,7 +20,7 @@ public class HammingWeightTest
 	}
 
 	@Test
-	public void testHammingWeightBestSolution() throws Exception
+	public void testHammingWeightBestSolution()
 	{
 		HammingWeight hammingWeight = new HammingWeight();
 		Assert.assertEquals(hammingWeight.hammingWeightBestSolution(11), 3);
