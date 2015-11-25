@@ -36,6 +36,7 @@ public class HammingWeight
 	public int hammingWeightBestSolution(int n)
 	{
 		int bits1Counter = 0;
+		String tmp = Integer.toBinaryString(n);
 
 		for(int i = 0; i < 32; i++)
 		{

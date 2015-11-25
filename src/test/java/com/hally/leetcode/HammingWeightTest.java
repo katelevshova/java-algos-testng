@@ -23,8 +23,9 @@ public class HammingWeightTest
 	public void testHammingWeightBestSolution()
 	{
 		HammingWeight hammingWeight = new HammingWeight();
-		Assert.assertEquals(hammingWeight.hammingWeightBestSolution(11), 3);
-		Assert.assertEquals(hammingWeight.hammingWeightBestSolution(5896), 5); // 5896 = 1011100001000
-//		Assert.assertEquals(hammingWeight.hammingWeightBestSolution(Integer.MAX_VALUE), 1);
+//		Assert.assertEquals(hammingWeight.hammingWeightBestSolution(11), 3);
+		//Assert.assertEquals(hammingWeight.hammingWeightBestSolution(5896), 5); // 5896 =
+		// 1011100001000
+		Assert.assertEquals(hammingWeight.hammingWeightBestSolution(Integer.MAX_VALUE), 31);
 	}
 }
