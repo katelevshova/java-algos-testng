@@ -15,7 +15,7 @@ public class RomanToInteger
 	 */
 
 
-	public int romanToInt(String s)
+	public int romanToInt(String str)
 	{
 		HashMap<Character, Integer> hashMap = new HashMap<>();
 		hashMap.put('I', 1);
@@ -26,7 +26,7 @@ public class RomanToInteger
 		hashMap.put('D', 500);
 		hashMap.put('M', 1000);
 
-		char[] symbols = s.toUpperCase().toCharArray();
+		char[] symbols = str.toUpperCase().toCharArray();
 		int result = 0;
 
 		for (int i = 0; i < symbols.length - 1; i++)
@@ -47,5 +47,32 @@ public class RomanToInteger
 		result += hashMap.get(symbols[symbols.length - 1]);
 
 		return result;
+	}
+
+	public int romanToIntCharCodes(String str)
+	{
+		int[] a = new int[26];
+		a['I' - 'A'] = 1;
+		a['V' - 'A'] = 5;
+		a['X' - 'A'] = 10;
+		a['L' - 'A'] = 50;
+		a['C' - 'A'] = 100;
+		a['D' - 'A'] = 500;
+		a['M' - 'A'] = 1000;
+
+		char prev = 'A';
+		int sum = 0;
+
+		for(char s : str.toCharArray())
+		{
+			if(a[s - 'A'] > a[prev - 'A'])
+			{
+				sum = sum - 2 * a[prev - 'A'];
+			}
+			sum = sum + a[s - 'A'];
+			prev = s;
+		}
+
+		return sum;
 	}
 }
