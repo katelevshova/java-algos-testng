@@ -29,30 +29,22 @@ public class RomanToInteger
 		char[] symbols = s.toUpperCase().toCharArray();
 		int result = 0;
 
-		for (int i = 0; i < symbols.length; i++)
+		for (int i = 0; i < symbols.length - 1; i++)
 		{
-			if (i <= symbols.length - 2)
+			if (hashMap.containsKey(symbols[i]) && hashMap.containsKey(symbols[i + 1]))
 			{
-				if (hashMap.containsKey(symbols[i]) && hashMap.containsKey(symbols[i + 1]))
-				{
-					if (hashMap.get(symbols[i]) >= hashMap.get(symbols[i + 1]))
-					{
-						result += hashMap.get(symbols[i]);
-					}
-					else
-					{
-						result -= hashMap.get(symbols[i]);
-					}
-				}
-			}
-			else
-			{
-				if (hashMap.containsKey(symbols[i]) )
+				if (hashMap.get(symbols[i]) >= hashMap.get(symbols[i + 1]))
 				{
 					result += hashMap.get(symbols[i]);
 				}
+				else
+				{
+					result -= hashMap.get(symbols[i]);
+				}
 			}
 		}
+
+		result += hashMap.get(symbols[symbols.length - 1]);
 
 		return result;
 	}
