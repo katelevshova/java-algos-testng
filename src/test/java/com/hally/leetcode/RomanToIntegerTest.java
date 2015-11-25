@@ -43,4 +43,21 @@ public class RomanToIntegerTest
 		Assert.assertEquals(romanToInteger.romanToIntCharCodes("CM"), 900 );
 		Assert.assertEquals(romanToInteger.romanToIntCharCodes("MMMCMXCIX"), 3999 );
 	}
+
+	@Test
+	public void testRomanToIntSwitch()
+	{
+		RomanToInteger romanToInteger = new RomanToInteger();
+		Assert.assertEquals(romanToInteger.romanToIntSwitch("XIII"), 13);
+		Assert.assertEquals(romanToInteger.romanToIntSwitch("CCVII"), 207);
+		Assert.assertEquals(romanToInteger.romanToIntSwitch("MLXVI"), 1066);
+
+		Assert.assertEquals(romanToInteger.romanToIntSwitch("IV"), 4 );
+		Assert.assertEquals(romanToInteger.romanToIntSwitch("IX"), 9 );
+		Assert.assertEquals(romanToInteger.romanToIntSwitch("XL"), 40 );
+		Assert.assertEquals(romanToInteger.romanToIntSwitch("XC"), 90 );
+		Assert.assertEquals(romanToInteger.romanToIntSwitch("CD"), 400 );
+		Assert.assertEquals(romanToInteger.romanToIntSwitch("CM"), 900 );
+		Assert.assertEquals(romanToInteger.romanToIntSwitch("MMMCMXCIX"), 3999 );
+	}
 }
