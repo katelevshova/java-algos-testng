@@ -19,4 +19,16 @@ public class ListNode
 		next = nextNode;
 	}
 
+	public static String printLinkedList(ListNode currentNode)
+	{
+		String result = "";
+		while (currentNode != null)
+		{
+			System.out.println(currentNode.value);
+			result += currentNode.value;
+			currentNode = currentNode.next;
+		}
+		return result;
+	}
+
 }

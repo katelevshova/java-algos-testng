@@ -26,13 +26,13 @@ public class DeleteNodeLinkedListTest
 		ListNode listNode1 = new ListNode(1, listNode2);
 
 		System.out.println("Before delete:");
-		String actualResult = printLinkedList(listNode1);
+		String actualResult = ListNode.printLinkedList(listNode1);
 		Assert.assertEquals(actualResult, "1234");
 
 		_deleteNodeLinkedList.deleteListNode(listNode2);
 
 		System.out.println("After delete node 2:");
-		actualResult = printLinkedList(listNode1);
+		actualResult = ListNode.printLinkedList(listNode1);
 		Assert.assertEquals(actualResult, "134");
 	}
 
@@ -45,13 +45,13 @@ public class DeleteNodeLinkedListTest
 		ListNode listNode1 = new ListNode(1, listNode2);
 
 		System.out.println("Before delete:");
-		String actualResult = printLinkedList(listNode1);
+		String actualResult = ListNode.printLinkedList(listNode1);
 		Assert.assertEquals(actualResult, "1234");
 
 		_deleteNodeLinkedList.deleteListNode(listNode3);
 
 		System.out.println("After delete node 3:");
-		actualResult = printLinkedList(listNode1);
+		actualResult = ListNode.printLinkedList(listNode1);
 		Assert.assertEquals(actualResult, "124");
 	}
 
@@ -64,13 +64,13 @@ public class DeleteNodeLinkedListTest
 		ListNode listNode1 = new ListNode(1, listNode2);
 
 		System.out.println("Before delete:");
-		String actualResult = printLinkedList(listNode1);
+		String actualResult = ListNode.printLinkedList(listNode1);
 		Assert.assertEquals(actualResult, "1234");
 
 		_deleteNodeLinkedList.deleteListNode(listNode1);
 
 		System.out.println("After delete node 1:");
-		actualResult = printLinkedList(listNode1);
+		actualResult = ListNode.printLinkedList(listNode1);
 		Assert.assertEquals(actualResult, "234");
 	}
 
@@ -83,13 +83,13 @@ public class DeleteNodeLinkedListTest
 		ListNode listNode1 = new ListNode(1, listNode2);
 
 		System.out.println("Before delete:");
-		String actualResult = printLinkedList(listNode1);
+		String actualResult = ListNode.printLinkedList(listNode1);
 		Assert.assertEquals(actualResult, "1234");
 
 		_deleteNodeLinkedList.deleteListNode(listNode4);
 
 		System.out.println("After delete node 4:");
-		actualResult = printLinkedList(listNode1);
+		actualResult = ListNode.printLinkedList(listNode1);
 		Assert.assertEquals(actualResult, "1234");
 	}
 
@@ -102,25 +102,15 @@ public class DeleteNodeLinkedListTest
 		ListNode listNode1 = new ListNode(1, listNode2);
 
 		System.out.println("Before delete:");
-		String actualResult = printLinkedList(listNode1);
+		String actualResult = ListNode.printLinkedList(listNode1);
 		Assert.assertEquals(actualResult, "1234");
 
 		_deleteNodeLinkedList.deleteListNode(null);
 
 		System.out.println("After delete node null:");
-		actualResult = printLinkedList(listNode1);
+		actualResult = ListNode.printLinkedList(listNode1);
 		Assert.assertEquals(actualResult, "1234");
 	}
 
-	private String printLinkedList(ListNode currentNode)
-	{
-		String result = "";
-		while (currentNode != null)
-		{
-			System.out.println(currentNode.value);
-			result += currentNode.value;
-			currentNode = currentNode.next;
-		}
-		return result;
-	}
+
 }
