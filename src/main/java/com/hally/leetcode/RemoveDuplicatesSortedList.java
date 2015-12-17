@@ -24,7 +24,6 @@ public class RemoveDuplicatesSortedList
 
 		while (current.next != null)
 		{
-
 			if (current.value == current.next.value)
 			{
 				current.next = current.next.next;
