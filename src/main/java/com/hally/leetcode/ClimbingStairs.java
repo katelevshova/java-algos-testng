@@ -90,43 +90,7 @@ public class ClimbingStairs
 		return current;
 	}
 
-	// better solution 3
-	public int getDistinctWaysRemainderOperator(int n)
-	{
-		if (n == 0)
-		{
-			return 0;
-		}
-
-		if (n == 1)
-		{
-			return 1;
-		}
-
-		if (n == 2)
-		{
-			return 2;
-		}
-
-		int f1 = 1;
-		int f2 = 2;
-
-		for (int i = 2; i <= n; i++)
-		{
-			if (i % 2 == 0)
-			{
-				f2 = f1 + f2;
-			}
-			else
-			{
-				f1 = f1 + f2;
-			}
-		}
-
-		return n % 2 == 0 ? f2 : f1;
-	}
-
-	//better solution 4
+	//better solution 3
 	public int getDistinctWaysWhile(int n)
 	{
 		if (n == 0)

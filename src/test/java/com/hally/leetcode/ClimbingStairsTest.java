@@ -17,7 +17,6 @@ public class ClimbingStairsTest
 		Assert.assertEquals(solution.getDistinctWaysHashMap(4), 5);
 		Assert.assertEquals(solution.getDistinctWaysArray(4), 5);
 		Assert.assertEquals(solution.getDistinctWaysVars(4), 5);
-		//Assert.assertEquals(solution.getDistinctWaysRemainderOperator(4), 5);
 		Assert.assertEquals(solution.getDistinctWaysWhile(4), 5);
 	}
 
@@ -28,7 +27,6 @@ public class ClimbingStairsTest
 		Assert.assertEquals(solution.getDistinctWaysHashMap(23), 46368);
 		Assert.assertEquals(solution.getDistinctWaysArray(23), 46368);
 		Assert.assertEquals(solution.getDistinctWaysVars(23), 46368);
-		//Assert.assertEquals(solution.getDistinctWaysRemainderOperator(23), 46368);
 		Assert.assertEquals(solution.getDistinctWaysWhile(23), 46368);
 	}
 
@@ -39,7 +37,6 @@ public class ClimbingStairsTest
 		Assert.assertEquals(solution.getDistinctWaysHashMap(1), 1);
 		Assert.assertEquals(solution.getDistinctWaysArray(1), 1);
 		Assert.assertEquals(solution.getDistinctWaysVars(1), 1);
-		//Assert.assertEquals(solution.getDistinctWaysRemainderOperator(1), 1);
 		Assert.assertEquals(solution.getDistinctWaysWhile(1), 1);
 	}
 }
