@@ -22,9 +22,9 @@ public class IsUglySolution
 			num = Math.abs(num);
 		}
 
-		int[] deviders = new int[]{2, 3, 5};
+		int[] divisors = new int[]{2, 3, 5};
 
-		for (int d: deviders )
+		for (int d: divisors )
 		{
 			while (num%d == 0)
 			{
