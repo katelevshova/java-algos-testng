@@ -7,14 +7,14 @@ import org.testng.annotations.Test;
 /**
  * Created by Kateryna Levshova on 23.10.2015.
  */
-public class DeleteNodeLinkedListTest
+public class DeleteNodeLinkedListExceptTailTest
 {
-	private DeleteNodeLinkedList _deleteNodeLinkedList;
+	private DeleteNodeLinkedListExceptTail _deleteNodeLinkedListExceptTail;
 
 	@BeforeSuite
 	public void setUp()
 	{
-		_deleteNodeLinkedList = new DeleteNodeLinkedList();
+		_deleteNodeLinkedListExceptTail = new DeleteNodeLinkedListExceptTail();
 	}
 
 	@Test
@@ -29,7 +29,7 @@ public class DeleteNodeLinkedListTest
 		String actualResult = ListNode.printLinkedList(listNode1);
 		Assert.assertEquals(actualResult, "1234");
 
-		_deleteNodeLinkedList.deleteListNode(listNode2);
+		_deleteNodeLinkedListExceptTail.deleteListNode(listNode2);
 
 		System.out.println("After delete node 2:");
 		actualResult = ListNode.printLinkedList(listNode1);
@@ -48,7 +48,7 @@ public class DeleteNodeLinkedListTest
 		String actualResult = ListNode.printLinkedList(listNode1);
 		Assert.assertEquals(actualResult, "1234");
 
-		_deleteNodeLinkedList.deleteListNode(listNode3);
+		_deleteNodeLinkedListExceptTail.deleteListNode(listNode3);
 
 		System.out.println("After delete node 3:");
 		actualResult = ListNode.printLinkedList(listNode1);
@@ -67,7 +67,7 @@ public class DeleteNodeLinkedListTest
 		String actualResult = ListNode.printLinkedList(listNode1);
 		Assert.assertEquals(actualResult, "1234");
 
-		_deleteNodeLinkedList.deleteListNode(listNode1);
+		_deleteNodeLinkedListExceptTail.deleteListNode(listNode1);
 
 		System.out.println("After delete node 1:");
 		actualResult = ListNode.printLinkedList(listNode1);
@@ -86,7 +86,7 @@ public class DeleteNodeLinkedListTest
 		String actualResult = ListNode.printLinkedList(listNode1);
 		Assert.assertEquals(actualResult, "1234");
 
-		_deleteNodeLinkedList.deleteListNode(listNode4);
+		_deleteNodeLinkedListExceptTail.deleteListNode(listNode4);
 
 		System.out.println("After delete node 4:");
 		actualResult = ListNode.printLinkedList(listNode1);
@@ -105,7 +105,7 @@ public class DeleteNodeLinkedListTest
 		String actualResult = ListNode.printLinkedList(listNode1);
 		Assert.assertEquals(actualResult, "1234");
 
-		_deleteNodeLinkedList.deleteListNode(null);
+		_deleteNodeLinkedListExceptTail.deleteListNode(null);
 
 		System.out.println("After delete node null:");
 		actualResult = ListNode.printLinkedList(listNode1);

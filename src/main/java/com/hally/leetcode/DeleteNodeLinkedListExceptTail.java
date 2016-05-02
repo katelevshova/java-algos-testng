@@ -5,7 +5,7 @@ import java.util.LinkedList;
 /**
  * Created by Kateryna Levshova on 23.10.2015.
  */
-public class DeleteNodeLinkedList
+public class DeleteNodeLinkedListExceptTail
 {
 	/**
 	 * Task:
