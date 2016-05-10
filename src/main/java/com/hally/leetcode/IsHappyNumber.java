@@ -46,10 +46,11 @@ public class IsHappyNumber
 	public int calculateSquareSum(int n)
 	{
 		int sum = 0;
+		int k = 0;
 		while (n > 0)
 		{
-			int k = n % 10;
-			sum = sum + k * k;
+			k = n % 10;
+			sum += k * k;
 			n = n / 10;
 		}
 		return sum;

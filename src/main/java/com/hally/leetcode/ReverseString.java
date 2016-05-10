@@ -12,13 +12,15 @@ public class ReverseString
 			return s;
 		}
 
-		String result = "";
+		StringBuilder result = new StringBuilder();
+		int counter = s.length() - 1;
 
-		for (int i = s.length()-1; i >= 0; i--)
+		while (counter >= 0)
 		{
-			result += s.charAt(i);
+			result = result.append(s.charAt(counter));
+			counter --;
 		}
 
-		return result;
+		return result.toString();
 	}
 }
