@@ -18,14 +18,14 @@ import java.util.TreeMap;
  * @author Kateryna Levshova
  * @date 25.09.2015
  */
-public class StringPrintDistinctWords
+public class PrintNumberOfDistinctWordsDescOrder
 {
 	//TreeMap uses key-value pairs and is backed up by Red-Black tree algorithm. Sorts the key in
 	// ascending order (alphabetical and upper/down case sensitive)
 	private TreeMap<String, Integer> _treeMapWords;
 
 	/**
-	 * Used for <code>StringPrintDistinctWords</code> class
+	 * Used for <code>PrintNumberOfDistinctWordsDescOrder</code> class
 	 * @return
 	 */
 	public TreeMap<String, Integer> getWords()
