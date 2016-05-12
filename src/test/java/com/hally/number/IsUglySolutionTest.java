@@ -1,9 +1,9 @@
-package com.hally.leetcode;
+package com.hally.number;
+
+import com.hally.number.IsUglySolution;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
-import static org.testng.Assert.*;
 
 /**
  * Created by Oni on 12.02.2016.

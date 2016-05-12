@@ -1,9 +1,9 @@
-package com.hally.leetcode;
+package com.hally.number;
+
+import com.hally.number.RomanToInteger;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
-import static org.testng.Assert.*;
 
 /**
  * Created by Kateryna Levshova on 24.11.2015.

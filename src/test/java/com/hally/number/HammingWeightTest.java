@@ -1,9 +1,9 @@
-package com.hally.leetcode;
+package com.hally.number;
+
+import com.hally.number.HammingWeight;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
-import static org.testng.Assert.*;
 
 /**
  * Created by Kateryna Levshova on 14.11.2015.

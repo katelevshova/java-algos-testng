@@ -1,4 +1,6 @@
-package com.hally.leetcode;
+package com.hally.number;
+
+import com.hally.number.NimGame;
 
 import org.testng.Assert;
 import org.testng.annotations.BeforeSuite;

@@ -1,9 +1,9 @@
-package com.hally.leetcode;
+package com.hally.string;
+
+import com.hally.string.ExcelSheetColumnNumber;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
-import static org.testng.Assert.*;
 
 /**
  * Created by Kateryna Levshova on 13.11.2015.

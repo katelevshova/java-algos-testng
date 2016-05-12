@@ -1,9 +1,9 @@
-package com.hally.leetcode;
+package com.hally.number;
+
+import com.hally.number.IsHappyNumber;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
-import static org.testng.Assert.*;
 
 /**
  * Created by Kateryna Levshova on 02.05.2016.

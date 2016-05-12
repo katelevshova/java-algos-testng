@@ -1,4 +1,4 @@
-package com.hally.leetcode;
+package com.hally.number;
 
 /**
  * Created by Oni on 12.02.2016.

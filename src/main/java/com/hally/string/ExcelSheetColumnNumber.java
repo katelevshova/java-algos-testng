@@ -1,4 +1,4 @@
-package com.hally.leetcode;
+package com.hally.string;
 
 import java.util.Hashtable;
 
