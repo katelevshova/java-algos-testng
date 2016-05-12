@@ -1,9 +1,9 @@
-package com.hally.leetcode;
+package com.hally.string;
+
+import com.hally.string.ReverseString;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
-import static org.testng.Assert.*;
 
 /**
  * Created by Kateryna Levshova on 29.04.2016.

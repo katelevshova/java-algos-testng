@@ -1,4 +1,4 @@
-package com.hally.taskSF;
+package com.hally.string;
 
 import java.util.ArrayList;
 import java.util.Arrays;

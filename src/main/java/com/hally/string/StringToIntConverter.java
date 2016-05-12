@@ -1,4 +1,4 @@
-package com.hally.task78;
+package com.hally.string;
 
 /**
  * Created by Kateryna Levshova

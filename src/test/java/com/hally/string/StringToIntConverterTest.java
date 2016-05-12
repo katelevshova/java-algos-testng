@@ -1,4 +1,6 @@
-package com.hally.task78;
+package com.hally.string;
+
+import com.hally.string.StringToIntConverter;
 
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;

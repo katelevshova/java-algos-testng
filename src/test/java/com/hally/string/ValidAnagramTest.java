@@ -1,9 +1,9 @@
-package com.hally.leetcode;
+package com.hally.string;
+
+import com.hally.string.ValidAnagram;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
-import static org.testng.Assert.*;
 
 /**
  * Created by Kateryna Levshova on 14.11.2015.

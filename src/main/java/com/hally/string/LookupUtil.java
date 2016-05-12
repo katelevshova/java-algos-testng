@@ -1,4 +1,6 @@
-package com.hally.task78;
+package com.hally.string;
+
+import com.hally.task78.TraceUtil;
 
 /**
  * Class LookupUtil searches a vendor name in a string based on bssId

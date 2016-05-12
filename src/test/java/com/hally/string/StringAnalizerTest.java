@@ -1,8 +1,8 @@
-package com.hally.taskSF;
+package com.hally.string;
+
+import com.hally.string.StringAnalizer;
 
 import org.testng.Assert;
-import org.testng.annotations.BeforeGroups;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
