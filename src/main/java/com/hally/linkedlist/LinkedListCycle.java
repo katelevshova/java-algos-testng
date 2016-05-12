@@ -1,8 +1,4 @@
-package com.hally.leetcode;
-
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.function.BooleanSupplier;
+package com.hally.linkedlist;
 
 /**
  * Created by Kateryna Levshova on 09.05.2016.

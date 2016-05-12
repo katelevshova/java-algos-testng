@@ -1,4 +1,4 @@
-package com.hally.leetcode;
+package com.hally.linkedlist;
 
 /**
  * Created by Kateryna Levshova on 02.05.2016.

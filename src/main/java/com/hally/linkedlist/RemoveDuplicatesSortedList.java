@@ -1,4 +1,6 @@
-package com.hally.leetcode;
+package com.hally.linkedlist;
+
+import com.hally.linkedlist.ListNode;
 
 /**
  * Created by Kateryna Levshova on 09.12.2015.

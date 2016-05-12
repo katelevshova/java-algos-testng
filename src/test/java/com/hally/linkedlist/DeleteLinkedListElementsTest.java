@@ -1,9 +1,10 @@
-package com.hally.leetcode;
+package com.hally.linkedlist;
+
+import com.hally.linkedlist.DeleteLinkedListElements;
+import com.hally.linkedlist.ListNode;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
-import static org.testng.Assert.*;
 
 /**
  * Created by Kateryna Levshova on 02.05.2016.

@@ -1,6 +1,4 @@
-package com.hally.leetcode;
-
-import java.util.LinkedList;
+package com.hally.linkedlist;
 
 /**
  * Created by Kateryna Levshova on 23.10.2015.

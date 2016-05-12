@@ -1,4 +1,7 @@
-package com.hally.leetcode;
+package com.hally.linkedlist;
+
+import com.hally.linkedlist.ListNode;
+import com.hally.linkedlist.ReverseList;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
