@@ -1,7 +1,5 @@
 package com.hally.string;
 
-import com.hally.string.StringAnalizer;
-
 import org.testng.Assert;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
@@ -14,25 +12,25 @@ import java.util.TreeMap;
  *
  * @date 25.09.2015
  */
-public class StringAnalizerTest
+public class StringPrintDistinctWordsTest
 {
 	private String _testStr1 = "Test one one one three";
 	private String _testStr2 = "Test test test. test";
-	private StringAnalizer _stringAnalizer;
+	private StringPrintDistinctWords _stringPrintDistinctWords;
 
 	@BeforeSuite(alwaysRun = false)
 	public void setUp()
 	{
 		System.out.println("setUp");
-		_stringAnalizer = new StringAnalizer();
+		_stringPrintDistinctWords = new StringPrintDistinctWords();
 	}
 
 	@Test(groups = "group1")
 	public void testPrintWordsInfo1()
 	{
-		 _stringAnalizer.printWordsInfo(_testStr1);
+		 _stringPrintDistinctWords.printWordsInfo(_testStr1);
 
-		TreeMap<String, Integer> treeMapWords = _stringAnalizer.getWords();
+		TreeMap<String, Integer> treeMapWords = _stringPrintDistinctWords.getWords();
 		Assert.assertEquals(treeMapWords.size(), 3);
 
 		Assert.assertTrue(treeMapWords.containsKey("Test"), "Must contain key 'Test'");
@@ -47,8 +45,8 @@ public class StringAnalizerTest
 	@Test(groups = "group1", dependsOnMethods = {"testPrintWordsInfo1"})
 	public void testGetTopAllWords1()
 	{
-		List<String> topAllWords = _stringAnalizer.getTopAllWords();
-		Assert.assertEquals(topAllWords.size(),  _stringAnalizer.getWords().size());
+		List<String> topAllWords = _stringPrintDistinctWords.getTopAllWords();
+		Assert.assertEquals(topAllWords.size(),  _stringPrintDistinctWords.getWords().size());
 
 		Assert.assertEquals("one=3", topAllWords.get(0) );
 		Assert.assertEquals("Test=1", topAllWords.get(1) );
@@ -58,8 +56,8 @@ public class StringAnalizerTest
 	@Test(groups = "group2", dependsOnGroups = "group1")
 	public void testPrintWordsInfo2()
 	{
-		_stringAnalizer.printWordsInfo(_testStr2);
-		TreeMap<String, Integer> treeMapWords = _stringAnalizer.getWords();
+		_stringPrintDistinctWords.printWordsInfo(_testStr2);
+		TreeMap<String, Integer> treeMapWords = _stringPrintDistinctWords.getWords();
 		Assert.assertEquals(treeMapWords.size(), 3);
 
 		Assert.assertTrue(treeMapWords.containsKey("Test"), "Must contain key 'Test'");
@@ -74,8 +72,8 @@ public class StringAnalizerTest
 	@Test(groups = "group2", dependsOnMethods = {"testPrintWordsInfo2"})
 	public void testGetTopAllWords2()
 	{
-		List<String> topAllWords = _stringAnalizer.getTopAllWords();
-		Assert.assertEquals(topAllWords.size(), _stringAnalizer.getWords().size());
+		List<String> topAllWords = _stringPrintDistinctWords.getTopAllWords();
+		Assert.assertEquals(topAllWords.size(), _stringPrintDistinctWords.getWords().size());
 
 		Assert.assertEquals("test=2", topAllWords.get(0) );
 		Assert.assertEquals("Test=1", topAllWords.get(1) );
