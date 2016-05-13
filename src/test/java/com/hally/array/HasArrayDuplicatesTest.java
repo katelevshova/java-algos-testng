@@ -1,7 +1,5 @@
 package com.hally.array;
 
-import com.hally.array.BigONotation;
-
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -10,20 +8,20 @@ import org.testng.annotations.Test;
  *
  * @date 21.09.2015
  */
-public class BigONotationTest
+public class HasArrayDuplicatesTest
 {
 	@Test
 	public void testHasDuplicates()
 	{
-		BigONotation bigONotation = new BigONotation();
+		HasArrayDuplicates hasArrayDuplicates = new HasArrayDuplicates();
 
 		int[] array = {2,4,5,2,5,6,3};
 
-		boolean actualResult = bigONotation.hasDuplicates(array);
+		boolean actualResult = hasArrayDuplicates.hasDuplicates(array);
 		Assert.assertTrue(actualResult == true);
 
 		array = new int[]{2};
-		actualResult = bigONotation.hasDuplicates(array);
+		actualResult = hasArrayDuplicates.hasDuplicates(array);
 		Assert.assertFalse(actualResult == true);
 	}
 }

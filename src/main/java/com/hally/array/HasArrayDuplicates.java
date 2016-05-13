@@ -8,7 +8,7 @@ package com.hally.array;
  *
  * @date 21.09.2015
  */
-public class BigONotation
+public class HasArrayDuplicates
 {
 	/**
 	 * This array takes O(n^2) running time because each element has to be compared with n
