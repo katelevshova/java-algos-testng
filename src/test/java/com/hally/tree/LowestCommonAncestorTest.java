@@ -1,12 +1,10 @@
-package com.hally.leetcode;
+package com.hally.tree;
 
-import com.hally.taskAp.TreeNode;
+import com.hally.tree.LowestCommonAncestor;
+import com.hally.tree.TreeNode;
 
 import org.testng.Assert;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
-import static org.testng.Assert.*;
 
 /**
  * Created by Kateryna Levshova on 28.10.2015.

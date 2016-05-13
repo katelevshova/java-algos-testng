@@ -1,4 +1,6 @@
-package com.hally.leetcode;
+package com.hally.array;
+
+import com.hally.array.ContainsDuplicatesArraySolution;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;

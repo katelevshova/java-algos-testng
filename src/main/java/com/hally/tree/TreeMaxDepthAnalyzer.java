@@ -1,6 +1,6 @@
-package com.hally.leetcode;
+package com.hally.tree;
 
-import com.hally.taskAp.TreeNode;
+import com.hally.tree.TreeNode;
 
 import java.util.LinkedList;
 

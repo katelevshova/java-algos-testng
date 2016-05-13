@@ -1,6 +1,7 @@
-package com.hally.leetcode;
+package com.hally.tree;
 
-import com.hally.taskAp.TreeNode;
+import com.hally.tree.TreeEqualtyAnalyzer;
+import com.hally.tree.TreeNode;
 
 import org.testng.Assert;
 import org.testng.annotations.BeforeSuite;
