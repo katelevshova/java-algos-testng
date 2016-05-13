@@ -1,4 +1,6 @@
-package com.hally.taskSF;
+package com.hally.number;
+
+import com.hally.number.NumberReverser;
 
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;

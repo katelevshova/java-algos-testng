@@ -1,4 +1,4 @@
-package com.hally.taskSF;
+package com.hally.number;
 
 /**
  *	Task if given a number 12345 print a reverse number 54321 without String or Array.

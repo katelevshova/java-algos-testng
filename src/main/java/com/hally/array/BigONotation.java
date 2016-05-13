@@ -1,4 +1,4 @@
-package com.hally.task78;
+package com.hally.array;
 
 /**
  * Big O notation is a way that programmers use to determine how the running speed of an

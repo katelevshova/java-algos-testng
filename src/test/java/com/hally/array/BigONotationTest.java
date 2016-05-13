@@ -1,4 +1,6 @@
-package com.hally.task78;
+package com.hally.array;
+
+import com.hally.array.BigONotation;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;

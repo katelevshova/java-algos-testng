@@ -1,10 +1,9 @@
 package com.hally.stats;
 
 
-import com.hally.task78.TraceUtil;
+import com.hally.TraceUtil;
 
 import org.testng.Assert;
-import org.testng.Reporter;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
