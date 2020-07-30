@@ -1,5 +1,8 @@
 /out
 /.idea
-/local.properties
+/*.properties
 
 
+/build
+/.gradle
+/gradle
