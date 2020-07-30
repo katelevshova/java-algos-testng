@@ -1,4 +1,5 @@
 package com.hally.tree;
+import com.hally.TraceUtil;
 import edu.princeton.cs.algs4.StdIn;
 
 public class WeightedQuickUnion
@@ -42,9 +43,22 @@ public class WeightedQuickUnion
      * Once both criteria satisfied - all members of your network are connected.
      */
 
-    public void WeightedQuickUnion(String logStr)
+    private String _logStr = "";
+
+    public WeightedQuickUnion(String logStr)
     {
-       // int n = StdIn.readInt();
+        TraceUtil.logD("WeightedQuickUnion", "constructor", "logStr= "+logStr);
+        _logStr = logStr;
     }
+
+    public void union (int friend1, int friend2)
+    {
+
+    }
+
+   /* public boolean isConnected(int friend1, int friend2)
+    {
+        return  root(friend1) == root(friend2);
+    }*/
 
 }
